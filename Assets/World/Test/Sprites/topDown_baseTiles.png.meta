@@ -202,7 +202,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_5
+      name: plant_03
       rect:
         serializedVersion: 2
         x: 80
@@ -223,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_6
+      name: plant_02
       rect:
         serializedVersion: 2
         x: 96
@@ -244,7 +244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_7
+      name: plant_01
       rect:
         serializedVersion: 2
         x: 112
@@ -475,7 +475,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_18
+      name: plant_04
       rect:
         serializedVersion: 2
         x: 80
@@ -685,7 +685,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_28
+      name: plant_05
       rect:
         serializedVersion: 2
         x: 80
@@ -706,7 +706,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_29
+      name: plant_06
       rect:
         serializedVersion: 2
         x: 96
@@ -727,7 +727,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_30
+      name: plant_07
       rect:
         serializedVersion: 2
         x: 112
@@ -979,7 +979,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_42
+      name: grass_01
       rect:
         serializedVersion: 2
         x: 112
@@ -1000,7 +1000,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_43
+      name: grass_02
       rect:
         serializedVersion: 2
         x: 128
@@ -1021,7 +1021,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_44
+      name: grass_03
       rect:
         serializedVersion: 2
         x: 144
@@ -1042,7 +1042,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_45
+      name: grass_04
       rect:
         serializedVersion: 2
         x: 160
@@ -1651,7 +1651,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_74
+      name: grass_05
       rect:
         serializedVersion: 2
         x: 144
@@ -3625,7 +3625,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_168
+      name: tisland_inner_bottomright
       rect:
         serializedVersion: 2
         x: 96
@@ -3667,7 +3667,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_170
+      name: tisland_inner_bottomleft
       rect:
         serializedVersion: 2
         x: 128
@@ -4990,7 +4990,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_233
+      name: tisland_inner_topright
       rect:
         serializedVersion: 2
         x: 96
@@ -5032,7 +5032,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: topDown_baseTiles_235
+      name: tisland_inner_topleft
       rect:
         serializedVersion: 2
         x: 128
@@ -12959,10 +12959,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      grass_01: 1216782397
+      grass_02: 1089187498
+      grass_03: -1239892345
+      grass_04: 1571196849
+      grass_05: -1806772120
+      plant_01: -760679963
+      plant_02: 1661589984
+      plant_03: 953517607
+      plant_04: 187199791
+      plant_05: 1294343614
+      plant_06: -1095116519
+      plant_07: 604796683
       tisland_base: 757093814
       tisland_bottom: 330723752
       tisland_bottomleft: 885364666
       tisland_bottomright: 1736748661
+      tisland_inner_bottomleft: 1780007507
+      tisland_inner_bottomright: 1807217295
+      tisland_inner_topleft: 764749359
+      tisland_inner_topright: -1242217604
       tisland_left: -946597366
       tisland_right: -2120775511
       tisland_top: -865098680
@@ -13046,9 +13062,7 @@ TextureImporter:
       topDown_baseTiles_165: -1416455561
       topDown_baseTiles_166: 341007952
       topDown_baseTiles_167: -2126248351
-      topDown_baseTiles_168: 1807217295
       topDown_baseTiles_17: 962782841
-      topDown_baseTiles_170: 1780007507
       topDown_baseTiles_173: 1967605781
       topDown_baseTiles_174: 1489992585
       topDown_baseTiles_175: -190030913
@@ -13056,7 +13070,6 @@ TextureImporter:
       topDown_baseTiles_177: 424487623
       topDown_baseTiles_178: -738458130
       topDown_baseTiles_179: -450260074
-      topDown_baseTiles_18: 187199791
       topDown_baseTiles_180: -1429879681
       topDown_baseTiles_181: -1874462128
       topDown_baseTiles_182: 278156341
@@ -13111,8 +13124,6 @@ TextureImporter:
       topDown_baseTiles_230: -1851381550
       topDown_baseTiles_231: 114241527
       topDown_baseTiles_232: 1577798214
-      topDown_baseTiles_233: -1242217604
-      topDown_baseTiles_235: 764749359
       topDown_baseTiles_236: 1861176180
       topDown_baseTiles_237: 944889690
       topDown_baseTiles_238: 342787740
@@ -13161,7 +13172,6 @@ TextureImporter:
       topDown_baseTiles_277: 19935607
       topDown_baseTiles_278: 627254820
       topDown_baseTiles_279: -1872393438
-      topDown_baseTiles_28: 1294343614
       topDown_baseTiles_280: -1289589985
       topDown_baseTiles_281: -223376898
       topDown_baseTiles_282: -1257713678
@@ -13172,7 +13182,6 @@ TextureImporter:
       topDown_baseTiles_287: 622903829
       topDown_baseTiles_288: -662533070
       topDown_baseTiles_289: 1605869064
-      topDown_baseTiles_29: -1095116519
       topDown_baseTiles_290: 1093558030
       topDown_baseTiles_291: -1122641611
       topDown_baseTiles_292: 976072976
@@ -13184,7 +13193,6 @@ TextureImporter:
       topDown_baseTiles_298: -413258713
       topDown_baseTiles_299: -1491387589
       topDown_baseTiles_3: 660945737
-      topDown_baseTiles_30: 604796683
       topDown_baseTiles_300: -711523270
       topDown_baseTiles_301: 2106364158
       topDown_baseTiles_302: -549930565
@@ -13316,7 +13324,6 @@ TextureImporter:
       topDown_baseTiles_417: -1785580730
       topDown_baseTiles_418: 1889782129
       topDown_baseTiles_419: -569990327
-      topDown_baseTiles_42: 1216782397
       topDown_baseTiles_420: -1230529780
       topDown_baseTiles_421: -1920468848
       topDown_baseTiles_422: 768076815
@@ -13327,7 +13334,6 @@ TextureImporter:
       topDown_baseTiles_427: 1446204926
       topDown_baseTiles_428: 1270206553
       topDown_baseTiles_429: -362243336
-      topDown_baseTiles_43: 1089187498
       topDown_baseTiles_430: -1011897045
       topDown_baseTiles_431: -1122361952
       topDown_baseTiles_432: 1618002881
@@ -13338,7 +13344,6 @@ TextureImporter:
       topDown_baseTiles_437: 2034602295
       topDown_baseTiles_438: 714095977
       topDown_baseTiles_439: -12865561
-      topDown_baseTiles_44: -1239892345
       topDown_baseTiles_440: -143987099
       topDown_baseTiles_441: -2110994142
       topDown_baseTiles_442: -609978331
@@ -13349,7 +13354,6 @@ TextureImporter:
       topDown_baseTiles_447: 195232956
       topDown_baseTiles_448: 1145297021
       topDown_baseTiles_449: -1830562921
-      topDown_baseTiles_45: 1571196849
       topDown_baseTiles_450: -2138938049
       topDown_baseTiles_451: 1177830710
       topDown_baseTiles_452: 949989929
@@ -13404,7 +13408,6 @@ TextureImporter:
       topDown_baseTiles_497: -623112759
       topDown_baseTiles_498: -816051069
       topDown_baseTiles_499: 1912802340
-      topDown_baseTiles_5: 953517607
       topDown_baseTiles_50: 1536638953
       topDown_baseTiles_500: 1781719043
       topDown_baseTiles_501: 2090686955
@@ -13515,7 +13518,6 @@ TextureImporter:
       topDown_baseTiles_597: -102017814
       topDown_baseTiles_598: -891116624
       topDown_baseTiles_599: -985869551
-      topDown_baseTiles_6: 1661589984
       topDown_baseTiles_60: 796809992
       topDown_baseTiles_600: -985778141
       topDown_baseTiles_601: -828407298
@@ -13538,12 +13540,10 @@ TextureImporter:
       topDown_baseTiles_67: 924887655
       topDown_baseTiles_68: 393251961
       topDown_baseTiles_69: 973055546
-      topDown_baseTiles_7: -760679963
       topDown_baseTiles_70: -576318983
       topDown_baseTiles_71: -1587015643
       topDown_baseTiles_72: -1223781430
       topDown_baseTiles_73: 1510889438
-      topDown_baseTiles_74: -1806772120
       topDown_baseTiles_75: -1122352731
       topDown_baseTiles_76: 1126602569
       topDown_baseTiles_77: 1655611745
