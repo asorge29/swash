@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: rt_island_ground
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 587247974, guid: e1ef18692a0784b82bb128d676af290c, type: 3}
+  m_DefaultSprite: {fileID: 801005379, guid: 11ad9ea781f9a0244966bee2556e0f1a, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:

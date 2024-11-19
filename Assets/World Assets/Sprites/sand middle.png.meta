@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e1ef18692a0784b82bb128d676af290c
+guid: 11ad9ea781f9a0244966bee2556e0f1a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,19 +93,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -124,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62fb66e69f1c7f640a56270c96231ac2
-      internalID: 587247974
+      spriteID: 6cb264e3f73088144974b03f65af79e8
+      internalID: 801005379
       vertices: []
       indices: 
       edges: []
@@ -141,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spr_sand_base: 587247974
+      spr_sand_base: 801005379
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
