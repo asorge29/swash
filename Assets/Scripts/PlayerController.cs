@@ -27,11 +27,15 @@ public class PlayerController : MonoBehaviour
     private bool _canDash;
     private bool _dashCdown;
     private bool _attackCdown;
+
+    private string _facing = "side";
     
     private Vector2 _moveDir = Vector2.zero;
     
     private readonly int _animMoveRight = Animator.StringToHash("anim_player_move_right");
     private readonly int _animIdleRight = Animator.StringToHash("anim_player_idle_right");
+    private readonly int _animMoveUp = Animator.StringToHash("anim_player_move_up");
+    private readonly int _animMoveDown = Animator.StringToHash("anim_player_move_down");
 
     
 
@@ -60,24 +64,50 @@ public class PlayerController : MonoBehaviour
     
     private void UpdateAnimation()
     {
-        if (_moveDir.x < 0)
+        if (_moveDir.x != 0)
         {
-            _spriteRenderer.flipX = true;
-        }
-        else if (_moveDir.x > 0)
-        {
-            _spriteRenderer.flipX = false;
+            if (_moveDir.x < 0)
+            {
+                _spriteRenderer.flipX = true;
+            }
+            else if (_moveDir.x > 0)
+            {
+                _spriteRenderer.flipX = false;
+            }
         }
 
         if (_moveDir.sqrMagnitude > 0)
         {
-            _animator.CrossFade(_animMoveRight, 0);
+            if (_moveDir.x == 0)
+            {
+                if (_moveDir.y < 0)
+                {
+                    _facing = "down";
+                    _animator.CrossFade(_animMoveDown, 0);
+                }
+                else
+                {
+                    _facing = "up";
+                    _animator.CrossFade(_animMoveUp, 0);
+                }
+            }
+            else
+            {
+                _facing = "side";
+               _animator.CrossFade(_animMoveRight, 0);
+            }
         }
         else
         {
-            _animator.CrossFade(_animIdleRight, 0);
+            switch (_facing)
+            {
+                case "up":
+                    _animator.CrossFade(_animIdleUp, 0);
+                case "down":
+                    _animator.CrossFade(_animIdleDown, 0);
+                default:
+                    _animator.CrossFade(_animIdleRight, 0);
+            }
         }
     }
-    
-    
 }
