@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [SelectionBase]
@@ -29,7 +30,9 @@ public class PlayerController : MonoBehaviour
 
     private bool _canDash;
     private bool _dashCdown;
-    private bool _attackCdown;
+    private float _lastAttack;
+
+    private List<EnemyAi> _enemiesInRange = new List<EnemyAi>();
 
     private string _facing = "side";
 
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        _lastAttack = Time.time - attackCooldown;
     }
 
     private void Update()
@@ -61,16 +65,51 @@ public class PlayerController : MonoBehaviour
     {
         MovementUpdate();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            _enemiesInRange.Add(collision.gameObject.GetComponent<EnemyAi>());
+        }
+        
+        foreach (var item in _enemiesInRange)
+        {
+            print(item.health);
+        }
+    }
+
+    private void OnTriggerExitt2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            _enemiesInRange.Remove(collision.gameObject.GetComponent<EnemyAi>());
+        }
+        print(_enemiesInRange);
+    }
     
     private void GatherInput()
     {
         _moveDir.x = Input.GetAxisRaw("Horizontal");
         _moveDir.y = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Attack();
+        }
     }
 
     private void MovementUpdate()
     {
         _rb.velocity = _moveDir.normalized * moveSpeed * Time.fixedDeltaTime;
+    }
+
+    private void Attack()
+    {
+        if (Time.time > attackCooldown + _lastAttack) {
+            _lastAttack = Time.time;
+            //TODO: attack
+        }
     }
 
     private void UpdateAnimation()
