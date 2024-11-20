@@ -1,23 +1,26 @@
+using System;
 using UnityEngine;
 
 [SelectionBase]
 public class PlayerController : MonoBehaviour
 {
-    //TODO: fix the region and enum bullshit
-    //TODO: vertical and horizontal walking animation
     //TODO: attack
-    //TODO: pickups
-    
-    public float moveSpeed = 250f;
+
+    public int lives = 3;
     public int maxHealth = 100;
+    public float regenerationRate = 0.5f;
+    
+    public float moveSpeed = 80f;
+    public bool dashAbility = false;
 
     public float attackCooldown = 0.2f;
     public float attackRange = 0.5f;
-
+    public float damageMultiplier = 1f;
     public bool visible = true;
-    
-    public bool dashAbility = false;
-    
+
+    public int coins = 0;
+    public float goldEarnRate = 1f;
+
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _spriteRenderer;
@@ -29,28 +32,32 @@ public class PlayerController : MonoBehaviour
     private bool _attackCdown;
 
     private string _facing = "side";
-    
+
     private Vector2 _moveDir = Vector2.zero;
-    
+
+    #region Animation References
+
     private readonly int _animMoveRight = Animator.StringToHash("anim_player_move_right");
     private readonly int _animIdleRight = Animator.StringToHash("anim_player_idle_right");
     private readonly int _animMoveUp = Animator.StringToHash("anim_player_move_up");
+    private readonly int _animIdleUp = Animator.StringToHash("anim_player_idle_up");
     private readonly int _animMoveDown = Animator.StringToHash("anim_player_move_down");
+    private readonly int _animIdleDown = Animator.StringToHash("anim_player_idle_down");
 
-    
+    #endregion
+
+    private void Start()
+    {
+        health = maxHealth;
+    }
 
     private void Update()
     {
         GatherInput();
         UpdateAnimation();
-    }
-
-    private void FixedUpdate()
-    {
         MovementUpdate();
     }
     
-
     private void GatherInput()
     {
         _moveDir.x = Input.GetAxisRaw("Horizontal");
@@ -59,9 +66,9 @@ public class PlayerController : MonoBehaviour
 
     private void MovementUpdate()
     {
-        _rb.velocity = _moveDir.normalized * moveSpeed * Time.fixedDeltaTime;
+        _rb.velocity = _moveDir.normalized * moveSpeed * 10 * Time.deltaTime;
     }
-    
+
     private void UpdateAnimation()
     {
         if (_moveDir.x != 0)
@@ -94,7 +101,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 _facing = "side";
-               _animator.CrossFade(_animMoveRight, 0);
+                _animator.CrossFade(_animMoveRight, 0);
             }
         }
         else
@@ -103,10 +110,13 @@ public class PlayerController : MonoBehaviour
             {
                 case "up":
                     _animator.CrossFade(_animIdleUp, 0);
+                    break;
                 case "down":
                     _animator.CrossFade(_animIdleDown, 0);
+                    break;
                 default:
                     _animator.CrossFade(_animIdleRight, 0);
+                    break;
             }
         }
     }
