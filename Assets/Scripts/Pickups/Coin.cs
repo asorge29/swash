@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Pickups
 {
-    public class GoldCoin : MonoBehaviour
+    public class Coin : MonoBehaviour
     {
         public int value = 1;
         

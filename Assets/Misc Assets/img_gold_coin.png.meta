@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_one_dubloon
+      name: spr_gold_coin
       rect:
         serializedVersion: 2
         x: 0
@@ -128,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spr_one_dubloon: -1691458935
+      spr_gold_coin: -1691458935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
