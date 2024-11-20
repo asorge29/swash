@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 250f;
     public bool dashAbility = false;
 
-    public float attackCooldown = 0.2f;
+    public float attackCooldown = 0.5f;
     public float attackRange = 0.5f;
     public float damageMultiplier = 1f;
     public bool visible = true;
