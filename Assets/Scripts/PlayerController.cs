@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 100;
     public float regenerationRate = 0.5f;
     
-    public float moveSpeed = 80f;
+    public float moveSpeed = 250f;
     public bool dashAbility = false;
 
     public float attackCooldown = 0.2f;
@@ -55,6 +55,10 @@ public class PlayerController : MonoBehaviour
     {
         GatherInput();
         UpdateAnimation();
+    }
+
+    private void FixedUpdate()
+    {
         MovementUpdate();
     }
     
@@ -66,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
     private void MovementUpdate()
     {
-        _rb.velocity = _moveDir.normalized * moveSpeed * 10 * Time.deltaTime;
+        _rb.velocity = _moveDir.normalized * moveSpeed * Time.fixedDeltaTime;
     }
 
     private void UpdateAnimation()

@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7456906532806262237}
-  - component: {fileID: 278531322176099601}
+  - component: {fileID: -4062912783289169880}
   - component: {fileID: 3243220072612538376}
   - component: {fileID: 72703986981700620}
   m_Layer: 0
-  m_Name: Voodoo Doll
+  m_Name: Tropical Fruit Basket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &278531322176099601
+--- !u!114 &-4062912783289169880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,9 +43,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6298609785362928000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21a2fc3c308abf1448b6b9e67adf6b88, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f8f1d36b9b171e42b44511d243f248e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenRateIncrease: 0.2
 --- !u!212 &3243220072612538376
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -88,7 +89,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4056604, g: 0.28219056, b: 0.17412782, a: 1}
+  m_Color: {r: 0.15873085, g: 0.8207547, b: 0.763809, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

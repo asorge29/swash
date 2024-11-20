@@ -2,16 +2,16 @@ using UnityEngine;
 
 namespace Pickups
 {
-    public class RumBottle : MonoBehaviour
+    public class SharksTooth : MonoBehaviour
     {
-        public float speedIncrease = 50f;
+        public float attackRateIncrease = 5f;
         
         public void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Player"))
             {
                 PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-                player.moveSpeed += speedIncrease;
+                player.moveSpeed += speedIncrease; //FIXME
                 Destroy(gameObject);
             }
         }
