@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     public float attackCooldown = 0.5f;
     public float attackRange = 0.5f;
+    public float damage = 20f;
     public float damageMultiplier = 1f;
     public bool visible = true;
 
@@ -68,17 +69,25 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && collision.isTrigger)
+        if (collision.isTrigger && collision.gameObject.CompareTag("Enemy"))
         {
-            _enemiesInRange.Add(collision.gameObject.GetComponent<EnemyAi>());
+            var enemyAI = collision.gameObject.GetComponent<EnemyAi>();
+            if (enemyAI != null && !_enemiesInRange.Contains(enemyAI))
+            {
+                _enemiesInRange.Add(enemyAI);
+            }
         }
     }
 
-    private void OnTriggerExitt2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.isTrigger && collision.gameObject.CompareTag("Enemy"))
         {
-            _enemiesInRange.Remove(collision.gameObject.GetComponent<EnemyAi>());
+            var enemyAI = collision.gameObject.GetComponent<EnemyAi>();
+            if (enemyAI != null && _enemiesInRange.Contains(enemyAI))
+            {
+                _enemiesInRange.Remove(enemyAI);
+            }
         }
     }
     
@@ -100,9 +109,17 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        if (Time.time > attackCooldown + _lastAttack) {
+        if (Time.time > attackCooldown + _lastAttack)
+        {
             _lastAttack = Time.time;
-            //TODO: attack
+            if (_enemiesInRange.Count > 0)
+            {
+                print("attack");
+                foreach (var e in _enemiesInRange)
+                {
+                    e.health -= (damage * damageMultiplier);
+                }
+            }
         }
     }
 

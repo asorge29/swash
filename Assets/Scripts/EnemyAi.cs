@@ -6,7 +6,7 @@ public class EnemyAi : MonoBehaviour
 {
     //TODO: attack
     
-    public int health = 100;
+    public float health = 100;
     public float moveSpeed = 200f;
 
     public float detectRange = 6f;
@@ -46,6 +46,7 @@ public class EnemyAi : MonoBehaviour
 
     private void Update()
     {
+        CheckDead();
         UpdateAnimation();
         TrackPlayer();
     }
@@ -53,6 +54,14 @@ public class EnemyAi : MonoBehaviour
     private void FixedUpdate()
     {
         MovementUpdate();
+    }
+
+    private void CheckDead()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void TrackPlayer()
