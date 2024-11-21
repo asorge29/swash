@@ -87621,6 +87621,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5297018788422125522, guid: 009ca5a3825743c4a9160a44ce15251c, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297018788422125522, guid: 009ca5a3825743c4a9160a44ce15251c, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297018788422125522, guid: 009ca5a3825743c4a9160a44ce15251c, type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8502096327982723627, guid: 009ca5a3825743c4a9160a44ce15251c, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -88535,6 +88547,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1527431466253636816, guid: 0d791617c1606354e9b9cd80566d1852, type: 3}
+      propertyPath: knockbackForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1741241271364734707, guid: 0d791617c1606354e9b9cd80566d1852, type: 3}
       propertyPath: m_Name
       value: Player

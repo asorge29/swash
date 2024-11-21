@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
     public int lives = 3;
     public int maxHealth = 100;
     public float regenerationRate = 0.5f;
-    
+
     public float moveSpeed = 250f;
     public bool dashAbility = false;
 
     public float attackCooldown = 0.5f;
     public float attackRange = 0.5f;
-    public float knockbackForce = 10f;
+    public float knockbackForce = 100f;
     public float damage = 20f;
     public float damageMultiplier = 1f;
     public bool visible = true;
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private bool _dashCdown;
     private float _lastAttack;
 
-    private List<EnemyAi> _enemiesInRange = new List<EnemyAi>();
+    private List<GameObject> _enemiesInRange = new List<GameObject>();
 
     private string _facing = "side";
 
@@ -70,10 +70,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.isTrigger && collision.gameObject.CompareTag("Enemy"))
         {
-            var enemyAI = collision.gameObject.GetComponent<EnemyAi>();
-            if (enemyAI != null && !_enemiesInRange.Contains(enemyAI))
+            var enemy = collision.gameObject;
+            if (enemy != null && !_enemiesInRange.Contains(enemy))
             {
-                _enemiesInRange.Add(enemyAI);
+                _enemiesInRange.Add(enemy);
             }
         }
     }
@@ -82,14 +82,14 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.isTrigger && collision.gameObject.CompareTag("Enemy"))
         {
-            var enemyAI = collision.gameObject.GetComponent<EnemyAi>();
-            if (enemyAI != null && _enemiesInRange.Contains(enemyAI))
+            var enemy = collision.gameObject;
+            if (enemy != null && _enemiesInRange.Contains(enemy))
             {
-                _enemiesInRange.Remove(enemyAI);
+                _enemiesInRange.Remove(enemy);
             }
         }
     }
-    
+
     private void GatherInput()
     {
         _moveDir.x = Input.GetAxisRaw("Horizontal");
@@ -110,16 +110,18 @@ public class PlayerController : MonoBehaviour
     {
         if (Time.time > attackCooldown + _lastAttack)
         {
-            _lastAttack = Time.time;
             if (_enemiesInRange.Count > 0)
             {
+                _lastAttack = Time.time;
                 foreach (var e in _enemiesInRange)
                 {
-                    e.health -= (damage * damageMultiplier);
-                    Rigidbody2D erb = e.GetComponent<Rigidbody2D>();
-                    print(erb);
+                    var erb = e.GetComponent<Rigidbody2D>();
+                    var enemyAi = erb.GetComponent<EnemyAi>();
+
+                    enemyAi.health -= damage * damageMultiplier;
+
                     Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
-                    erb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+                    erb.AddForce(knockbackDirection * (knockbackForce * 1000), ForceMode2D.Force);
                 }
             }
         }
