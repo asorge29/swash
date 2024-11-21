@@ -68,14 +68,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && collision.isTrigger)
         {
             _enemiesInRange.Add(collision.gameObject.GetComponent<EnemyAi>());
-        }
-        
-        foreach (var item in _enemiesInRange)
-        {
-            print(item.health);
         }
     }
 
@@ -85,7 +80,6 @@ public class PlayerController : MonoBehaviour
         {
             _enemiesInRange.Remove(collision.gameObject.GetComponent<EnemyAi>());
         }
-        print(_enemiesInRange);
     }
     
     private void GatherInput()

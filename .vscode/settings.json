@@ -56,5 +56,9 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "swash.sln"
+    "dotnet.defaultSolution": "swash.sln",
+    "workbench.colorCustomizations": {
+        "minimap.background": "#00000015",
+        "scrollbar.shadow": "#00000015"
+    }
 }
