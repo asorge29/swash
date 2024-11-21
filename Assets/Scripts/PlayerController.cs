@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public float damageMultiplier = 1f;
     public bool visible = true;
 
-    public int coins = 0;
+    public float coins = 0f;
     public float goldEarnRate = 1f;
 
     [SerializeField] Rigidbody2D _rb;
