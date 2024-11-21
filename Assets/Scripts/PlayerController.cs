@@ -5,8 +5,6 @@ using UnityEngine;
 [SelectionBase]
 public class PlayerController : MonoBehaviour
 {
-    //TODO: attack
-
     public int lives = 3;
     public int maxHealth = 100;
     public float regenerationRate = 0.5f;
@@ -16,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     public float attackCooldown = 0.5f;
     public float attackRange = 0.5f;
+    public float knockbackForce = 10f;
     public float damage = 20f;
     public float damageMultiplier = 1f;
     public bool visible = true;
@@ -114,10 +113,13 @@ public class PlayerController : MonoBehaviour
             _lastAttack = Time.time;
             if (_enemiesInRange.Count > 0)
             {
-                print("attack");
                 foreach (var e in _enemiesInRange)
                 {
                     e.health -= (damage * damageMultiplier);
+                    Rigidbody2D erb = e.GetComponent<Rigidbody2D>();
+                    print(erb);
+                    Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
+                    erb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
                 }
             }
         }
