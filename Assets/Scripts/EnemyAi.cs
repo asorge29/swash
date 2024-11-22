@@ -7,7 +7,9 @@ public class EnemyAi : MonoBehaviour
     //TODO: attack
     
     public float health = 100;
-    public float moveSpeed = 200f;
+    
+    public float moveSpeed = 3f;
+    public float acceleration = 50f;
 
     public float detectRange = 6f;
     
@@ -21,10 +23,6 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] SpriteRenderer _spriteRenderer;
 
     private bool _attackCdown;
-
-    [HideInInspector] public bool hit;
-    [HideInInspector] public float lastHit;
-    [HideInInspector] public float knockbackDuration = 0.5f;
 
     private string _facing = "side";
     
@@ -50,7 +48,6 @@ public class EnemyAi : MonoBehaviour
 
     private void Update()
     {
-        CheckHit();
         CheckDead();
         UpdateAnimation();
         TrackPlayer();
@@ -66,14 +63,6 @@ public class EnemyAi : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-        }
-    }
-
-    private void CheckHit()
-    {
-        if (Time.time - lastHit > knockbackDuration)
-        {
-            hit = false;
         }
     }
 
@@ -93,10 +82,9 @@ public class EnemyAi : MonoBehaviour
     
     private void MovementUpdate()
     {
-        if (!hit)
-        {
-            _rb.velocity = _moveDir.normalized * moveSpeed * Time.fixedDeltaTime;
-        }
+        Vector2 force = _moveDir * acceleration;
+        _rb.AddForce(force);
+        _rb.velocity = Vector2.ClampMagnitude(_rb.velocity, moveSpeed);
     }
 
     private void UpdateAnimation()

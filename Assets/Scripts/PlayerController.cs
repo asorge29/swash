@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 100;
     public float regenerationRate = 0.5f;
 
-    public float moveSpeed = 250f;
+    public float moveSpeed = 3f;
+    public float acceleration = 50f;
     public bool dashAbility = false;
 
     public float attackCooldown = 0.5f;
@@ -103,7 +104,9 @@ public class PlayerController : MonoBehaviour
 
     private void MovementUpdate()
     {
-        _rb.velocity = _moveDir.normalized * moveSpeed * Time.fixedDeltaTime;
+        Vector2 force = _moveDir * acceleration;
+        _rb.AddForce(force);
+        _rb.velocity = Vector2.ClampMagnitude(_rb.velocity, moveSpeed);
     }
 
     private void Attack()
@@ -119,11 +122,9 @@ public class PlayerController : MonoBehaviour
                     var enemyAi = erb.GetComponent<EnemyAi>();
 
                     enemyAi.health -= damage * damageMultiplier;
-                    enemyAi.hit = true;
-                    enemyAi.lastHit = Time.time;
 
                     Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
-                    erb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+                    erb.AddForce(knockbackDirection * knockbackForce * 100, ForceMode2D.Impulse);
                 }
             }
         }

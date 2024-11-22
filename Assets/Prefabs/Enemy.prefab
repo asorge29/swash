@@ -81,7 +81,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  moveSpeed: 200
+  moveSpeed: 2
+  acceleration: 50
   detectRange: 6
   attackDamage: 5
   attackCooldown: 0.5
@@ -90,7 +91,6 @@ MonoBehaviour:
   _rb: {fileID: 5297018788422125522}
   _animator: {fileID: 7753829721058668327}
   _spriteRenderer: {fileID: 6277887124349391674}
-  hit: 0
 --- !u!50 &5297018788422125522
 Rigidbody2D:
   serializedVersion: 4

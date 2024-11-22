@@ -83,11 +83,12 @@ MonoBehaviour:
   lives: 3
   maxHealth: 100
   regenerationRate: 0.5
-  moveSpeed: 250
+  moveSpeed: 3
+  acceleration: 50
   dashAbility: 0
   attackCooldown: 0.2
   attackRange: 0.5
-  knockbackForce: 10
+  knockbackForce: 30
   damage: 20
   damageMultiplier: 1
   visible: 1
@@ -110,7 +111,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
