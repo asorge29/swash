@@ -87,6 +87,8 @@ MonoBehaviour:
   dashAbility: 0
   attackCooldown: 0.2
   attackRange: 0.5
+  knockbackForce: 10
+  damage: 20
   damageMultiplier: 1
   visible: 1
   coins: 0

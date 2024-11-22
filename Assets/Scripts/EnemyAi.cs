@@ -22,6 +22,10 @@ public class EnemyAi : MonoBehaviour
 
     private bool _attackCdown;
 
+    [HideInInspector] public bool hit;
+    [HideInInspector] public float lastHit;
+    [HideInInspector] public float knockbackDuration = 0.5f;
+
     private string _facing = "side";
     
     private GameObject _player;
@@ -46,6 +50,7 @@ public class EnemyAi : MonoBehaviour
 
     private void Update()
     {
+        CheckHit();
         CheckDead();
         UpdateAnimation();
         TrackPlayer();
@@ -61,6 +66,14 @@ public class EnemyAi : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void CheckHit()
+    {
+        if (Time.time - lastHit > knockbackDuration)
+        {
+            hit = false;
         }
     }
 
@@ -80,7 +93,10 @@ public class EnemyAi : MonoBehaviour
     
     private void MovementUpdate()
     {
-        _rb.velocity = _moveDir.normalized * moveSpeed * Time.fixedDeltaTime;
+        if (!hit)
+        {
+            _rb.velocity = _moveDir.normalized * moveSpeed * Time.fixedDeltaTime;
+        }
     }
 
     private void UpdateAnimation()

@@ -119,9 +119,11 @@ public class PlayerController : MonoBehaviour
                     var enemyAi = erb.GetComponent<EnemyAi>();
 
                     enemyAi.health -= damage * damageMultiplier;
+                    enemyAi.hit = true;
+                    enemyAi.lastHit = Time.time;
 
                     Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
-                    erb.AddForce(knockbackDirection * (knockbackForce * 1000), ForceMode2D.Force);
+                    erb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
                 }
             }
         }
