@@ -7,6 +7,9 @@ using UnityEngine;
 [SelectionBase]
 public class PlayerController : MonoBehaviour
 {
+
+    //TODO: Add player velocity to knocnback force vector
+    
     public int lives = 3;
     public int maxHealth = 100;
     public float regenerationRate = 0.5f;
