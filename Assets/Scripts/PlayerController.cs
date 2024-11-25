@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
                     Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
                     enemyAi.knockedBack = true;
                     enemyAi.knockbackTimer = knockbackTime;
-                    erb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+                    erb.AddForce(knockbackDirection * (knockbackForce + _rb.velocity.magnitude), ForceMode2D.Impulse);
                 }
             }
         }
