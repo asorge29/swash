@@ -83,12 +83,13 @@ MonoBehaviour:
   lives: 3
   maxHealth: 100
   regenerationRate: 0.5
-  moveSpeed: 3
+  moveSpeed: 5
   acceleration: 50
   dashAbility: 0
-  attackCooldown: 0.2
+  attackCooldown: 0.5
   attackRange: 0.5
-  knockbackForce: 30
+  knockbackForce: 5
+  knockbackTime: 0.2
   damage: 20
   damageMultiplier: 1
   visible: 1

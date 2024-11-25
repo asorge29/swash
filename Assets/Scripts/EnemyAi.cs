@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyAi : MonoBehaviour
 {
     //TODO: attack
-    
+
     public float health = 100;
-    
+
     public float moveSpeed = 3f;
     public float acceleration = 50f;
 
     public float detectRange = 6f;
-    
+
     public int attackDamage = 5;
     public float attackCooldown = 0.5f;
     public float attackRange = 0.5f;
@@ -22,12 +22,15 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _spriteRenderer;
 
-    private bool _attackCdown;
+    private float _lastAttack;
+
+    [HideInInspector] public bool knockedBack = false;
+    [HideInInspector] public float knockbackTimer = 0f;
 
     private string _facing = "side";
-    
-    private GameObject _player;
 
+    private GameObject _player;
+    private PlayerController _playerController;
     private Vector2 _moveDir = Vector2.zero;
 
     #region Animation References
@@ -44,6 +47,7 @@ public class EnemyAi : MonoBehaviour
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
+        _playerController = _player.GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -69,22 +73,58 @@ public class EnemyAi : MonoBehaviour
     private void TrackPlayer()
     {
         float distance = Vector2.Distance(transform.position, _player.transform.position);
-        
-        if (distance < detectRange && distance > 0.8)
+
+        if (distance < detectRange)
         {
-            _moveDir = (_player.transform.position - transform.position).normalized;
+            if (distance > 0.8)
+            {
+                _moveDir = (_player.transform.position - transform.position).normalized;
+            }
+            else
+            {
+                _moveDir = Vector2.zero;
+                Attack();
+            }
         }
         else
         {
             _moveDir = Vector2.zero;
         }
     }
-    
+
+    private void Attack()
+    {
+        if (Time.time > attackCooldown + _lastAttack)
+        {
+            _lastAttack = Time.time;
+            _playerController.health -= attackDamage * damageMultiplier;
+
+            //Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
+            //enemyAi.knockedBack = true;
+            //enemyAi.knockbackTimer = knockbackTime;
+            //erb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
+    }
+
     private void MovementUpdate()
     {
-        Vector2 force = _moveDir * acceleration;
-        _rb.AddForce(force);
-        _rb.velocity = Vector2.ClampMagnitude(_rb.velocity, moveSpeed);
+        if (knockedBack)
+        {
+            if (knockbackTimer > 0f)
+            {
+                knockbackTimer -= Time.deltaTime;
+            }
+            else
+            {
+                knockedBack = false;
+            }
+        }
+        else
+        {
+            Vector2 force = _moveDir * acceleration;
+            _rb.AddForce(force);
+            _rb.velocity = Vector2.ClampMagnitude(_rb.velocity, moveSpeed);
+        }
     }
 
     private void UpdateAnimation()

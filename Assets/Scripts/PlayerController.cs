@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 [SelectionBase]
@@ -9,13 +11,14 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 100;
     public float regenerationRate = 0.5f;
 
-    public float moveSpeed = 3f;
+    public float moveSpeed = 5f;
     public float acceleration = 50f;
     public bool dashAbility = false;
 
     public float attackCooldown = 0.5f;
     public float attackRange = 0.5f;
-    public float knockbackForce = 100f;
+    public float knockbackForce = 5f;
+    public float knockbackTime = 0.2f;
     public float damage = 20f;
     public float damageMultiplier = 1f;
     public bool visible = true;
@@ -27,7 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _spriteRenderer;
 
-    [HideInInspector] public int health;
+    [HideInInspector] public float health;
 
     private bool _canDash;
     private bool _dashCdown;
@@ -58,6 +61,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        CheckDead();
+        Escape();
         GatherInput();
         UpdateAnimation();
     }
@@ -96,7 +101,7 @@ public class PlayerController : MonoBehaviour
         _moveDir.x = Input.GetAxisRaw("Horizontal");
         _moveDir.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.JoystickButton0))
         {
             Attack();
         }
@@ -107,6 +112,28 @@ public class PlayerController : MonoBehaviour
         Vector2 force = _moveDir * acceleration;
         _rb.AddForce(force);
         _rb.velocity = Vector2.ClampMagnitude(_rb.velocity, moveSpeed);
+    }
+
+    private void CheckDead()
+    {
+        if (health <= 0)
+        {
+#if UNITY_EDITOR
+            EditorApplication.ExitPlaymode();
+#endif
+            Application.Quit();
+        }
+    }
+    
+    private void Escape()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
+        {
+#if UNITY_EDITOR
+            EditorApplication.ExitPlaymode();
+#endif
+            Application.Quit();
+        }
     }
 
     private void Attack()
@@ -124,7 +151,9 @@ public class PlayerController : MonoBehaviour
                     enemyAi.health -= damage * damageMultiplier;
 
                     Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
-                    erb.AddForce(knockbackDirection * knockbackForce * 100, ForceMode2D.Impulse);
+                    enemyAi.knockedBack = true;
+                    enemyAi.knockbackTimer = knockbackTime;
+                    erb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
                 }
             }
         }

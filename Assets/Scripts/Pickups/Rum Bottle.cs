@@ -4,7 +4,7 @@ namespace Pickups
 {
     public class RumBottle : MonoBehaviour
     {
-        public float speedIncrease = 50f;
+        public float speedIncrease = 2f;
         
         public void OnTriggerEnter2D(Collider2D collision)
         {
