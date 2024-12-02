@@ -171,8 +171,22 @@ public class PlayerController : MonoBehaviour
             var erb = e.GetComponent<Rigidbody2D>();
             
             var angle = Vector2.SignedAngle(Vector2.right, erb.position - (Vector2)transform.position);
-            
-            //TODO: continue if not in range in correct direction
+
+            switch (_facing)
+            {
+                case Facing.Up:
+                    if (angle is < 45 or > 135) continue;
+                    break;
+                case Facing.Down:
+                    if (angle is > -45 or < -135) continue;
+                    break;
+                case Facing.Left:
+                    if (angle is < 135 or > -135) continue;
+                    break;
+                case Facing.Right:
+                    if (angle is > 45 or < -45) continue;
+                    break;
+            }
             
             var enemyAi = erb.GetComponent<EnemyAi>();
 
