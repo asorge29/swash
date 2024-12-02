@@ -7,9 +7,6 @@ using UnityEngine;
 [SelectionBase]
 public class PlayerController : MonoBehaviour
 {
-
-    //TODO: Add player velocity to knocnback force vector
-    
     public int lives = 3;
     public int maxHealth = 100;
     public float regenerationRate = 0.5f;
@@ -32,6 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _spriteRenderer;
+    [SerializeField] AudioSource _audioSource;
 
     [HideInInspector] public float health;
 
@@ -41,9 +39,18 @@ public class PlayerController : MonoBehaviour
 
     private List<GameObject> _enemiesInRange = new List<GameObject>();
 
-    private string _facing = "side";
-
+    private Facing _facing = Facing.Left;
+    private Vector3 _mousePos;
     private Vector2 _moveDir = Vector2.zero;
+    private float _facingAngle = 0f;
+
+    enum Facing
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
 
     #region Animation References
 
@@ -104,6 +111,20 @@ public class PlayerController : MonoBehaviour
         _moveDir.x = Input.GetAxisRaw("Horizontal");
         _moveDir.y = Input.GetAxisRaw("Vertical");
 
+        _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        _facingAngle = Vector2.SignedAngle(Vector2.right, (Vector2)_mousePos - (Vector2)transform.position);
+
+        _facing = _facingAngle switch
+        {
+            >= 0 and < 45 => Facing.Right,
+            >= 45 and < 135 => Facing.Up,
+            >= 135 and <= 180 => Facing.Left,
+            < 0 and > -45 => Facing.Right,
+            <= -45 and > -135 => Facing.Down,
+            <= -135 and >= -180 => Facing.Left,
+            _ => _facing
+        };
+
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.JoystickButton0))
         {
             Attack();
@@ -127,8 +148,8 @@ public class PlayerController : MonoBehaviour
             Application.Quit();
         }
     }
-    
-    private void Escape()
+
+    private static void Escape()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
         {
@@ -141,70 +162,59 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        if (Time.time > attackCooldown + _lastAttack)
+        if (!(Time.time > attackCooldown + _lastAttack)) return;
+        if (_enemiesInRange.Count <= 0) return;
+        _lastAttack = Time.time;
+        _audioSource.Play();
+        foreach (var e in _enemiesInRange)
         {
-            if (_enemiesInRange.Count > 0)
-            {
-                _lastAttack = Time.time;
-                foreach (var e in _enemiesInRange)
-                {
-                    var erb = e.GetComponent<Rigidbody2D>();
-                    var enemyAi = erb.GetComponent<EnemyAi>();
+            var erb = e.GetComponent<Rigidbody2D>();
+            
+            var angle = Vector2.SignedAngle(Vector2.right, erb.position - (Vector2)transform.position);
+            
+            //TODO: continue if not in range in correct direction
+            
+            var enemyAi = erb.GetComponent<EnemyAi>();
 
-                    enemyAi.health -= damage * damageMultiplier;
+            enemyAi.health -= damage * damageMultiplier;
 
-                    Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
-                    enemyAi.knockedBack = true;
-                    enemyAi.knockbackTimer = knockbackTime;
-                    erb.AddForce(knockbackDirection * (knockbackForce + _rb.velocity.magnitude), ForceMode2D.Impulse);
-                }
-            }
+            Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
+            enemyAi.knockedBack = true;
+            enemyAi.knockbackTimer = knockbackTime;
+            erb.AddForce(knockbackDirection * (knockbackForce + _rb.velocity.magnitude), ForceMode2D.Impulse);
         }
     }
 
     private void UpdateAnimation()
     {
-        if (_moveDir.x != 0)
+        if (_facing is Facing.Left or Facing.Right)
         {
-            if (_moveDir.x < 0)
-            {
-                _spriteRenderer.flipX = true;
-            }
-            else if (_moveDir.x > 0)
-            {
-                _spriteRenderer.flipX = false;
-            }
+            _spriteRenderer.flipX = _facing != Facing.Right;
         }
 
         if (_moveDir.sqrMagnitude > 0)
         {
-            if (_moveDir.x == 0)
+            switch (_facing)
             {
-                if (_moveDir.y < 0)
-                {
-                    _facing = "down";
-                    _animator.CrossFade(_animMoveDown, 0);
-                }
-                else
-                {
-                    _facing = "up";
+                case Facing.Up:
                     _animator.CrossFade(_animMoveUp, 0);
-                }
-            }
-            else
-            {
-                _facing = "side";
-                _animator.CrossFade(_animMoveRight, 0);
+                    break;
+                case Facing.Down:
+                    _animator.CrossFade(_animMoveDown, 0);
+                    break;
+                default:
+                    _animator.CrossFade(_animMoveRight, 0);
+                    break;
             }
         }
         else
         {
             switch (_facing)
             {
-                case "up":
+                case Facing.Up:
                     _animator.CrossFade(_animIdleUp, 0);
                     break;
-                case "down":
+                case Facing.Down:
                     _animator.CrossFade(_animIdleDown, 0);
                     break;
                 default:
