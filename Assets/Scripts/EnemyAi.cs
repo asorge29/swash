@@ -4,8 +4,6 @@ using UnityEngine;
 [SelectionBase]
 public class EnemyAi : MonoBehaviour
 {
-    //TODO: attack
-
     public float health = 100;
 
     public float moveSpeed = 3f;
@@ -27,11 +25,20 @@ public class EnemyAi : MonoBehaviour
     [HideInInspector] public bool knockedBack = false;
     [HideInInspector] public float knockbackTimer = 0f;
 
-    private string _facing = "side";
+    private Facing _facing = Facing.Right;
+    private float _facingAngle;
 
     private GameObject _player;
     private PlayerController _playerController;
     private Vector2 _moveDir = Vector2.zero;
+    
+    enum Facing
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
 
     #region Animation References
 
@@ -72,7 +79,20 @@ public class EnemyAi : MonoBehaviour
 
     private void TrackPlayer()
     {
-        float distance = Vector2.Distance(transform.position, _player.transform.position);
+        //TODO: make sure this works
+        _facingAngle = Vector2.SignedAngle(Vector2.right, (Vector2)_player.transform.position - (Vector2)transform.position);
+        _facing = _facingAngle switch
+        {
+            >= 0 and < 45 => Facing.Right,
+            >= 45 and < 135 => Facing.Up,
+            >= 135 and <= 180 => Facing.Left,
+            < 0 and > -45 => Facing.Right,
+            <= -45 and > -135 => Facing.Down,
+            <= -135 and >= -180 => Facing.Left,
+            _ => _facing
+        };
+        
+        var distance = Vector2.Distance(transform.position, _player.transform.position);
 
         if (distance < detectRange)
         {
@@ -98,7 +118,8 @@ public class EnemyAi : MonoBehaviour
         {
             _lastAttack = Time.time;
             _playerController.health -= attackDamage * damageMultiplier;
-
+            
+            //TODO: work out player knockback without stunlocking
             //Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
             //enemyAi.knockedBack = true;
             //enemyAi.knockbackTimer = knockbackTime;
@@ -127,49 +148,37 @@ public class EnemyAi : MonoBehaviour
         }
     }
 
+    //TODO: you copied and pasted this from playercontroller so check it out in the morning
     private void UpdateAnimation()
     {
-        if (_moveDir.x != 0)
+        if (_facing is Facing.Left or Facing.Right)
         {
-            if (_moveDir.x < 0)
-            {
-                _spriteRenderer.flipX = true;
-            }
-            else if (_moveDir.x > 0)
-            {
-                _spriteRenderer.flipX = false;
-            }
+            _spriteRenderer.flipX = _facing != Facing.Right;
         }
 
         if (_moveDir.sqrMagnitude > 0)
         {
-            if (_moveDir.x == 0)
+            switch (_facing)
             {
-                if (_moveDir.y < 0)
-                {
-                    _facing = "down";
-                    _animator.CrossFade(_animMoveDown, 0);
-                }
-                else
-                {
-                    _facing = "up";
+                case Facing.Up:
                     _animator.CrossFade(_animMoveUp, 0);
-                }
-            }
-            else
-            {
-                _facing = "side";
-                _animator.CrossFade(_animMoveRight, 0);
+                    break;
+                case Facing.Down:
+                    _animator.CrossFade(_animMoveDown, 0);
+                    break;
+                default:
+                    _animator.CrossFade(_animMoveRight, 0);
+                    break;
             }
         }
         else
         {
             switch (_facing)
             {
-                case "up":
+                case Facing.Up:
                     _animator.CrossFade(_animIdleUp, 0);
                     break;
-                case "down":
+                case Facing.Down:
                     _animator.CrossFade(_animIdleDown, 0);
                     break;
                 default:
