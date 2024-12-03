@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 _moveDir = Vector2.zero;
     private float _facingAngle = 0f;
 
-    enum Facing
+    private enum Facing
     {
         Up,
         Down,
@@ -186,7 +186,7 @@ public class PlayerController : MonoBehaviour
                 case Facing.Right:
                     if (angle is > 45 or < -45) continue;
                     break;
-            }
+            } 
             
             var enemyAi = erb.GetComponent<EnemyAi>();
 

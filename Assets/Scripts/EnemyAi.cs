@@ -32,7 +32,7 @@ public class EnemyAi : MonoBehaviour
     private PlayerController _playerController;
     private Vector2 _moveDir = Vector2.zero;
     
-    enum Facing
+    private enum Facing
     {
         Up,
         Down,
@@ -79,7 +79,6 @@ public class EnemyAi : MonoBehaviour
 
     private void TrackPlayer()
     {
-        //TODO: make sure this works
         _facingAngle = Vector2.SignedAngle(Vector2.right, (Vector2)_player.transform.position - (Vector2)transform.position);
         _facing = _facingAngle switch
         {
@@ -114,17 +113,16 @@ public class EnemyAi : MonoBehaviour
 
     private void Attack()
     {
-        if (Time.time > attackCooldown + _lastAttack)
-        {
-            _lastAttack = Time.time;
-            _playerController.health -= attackDamage * damageMultiplier;
+        if (!(Time.time > attackCooldown + _lastAttack)) return;
+        
+        _lastAttack = Time.time;
+        _playerController.health -= attackDamage * damageMultiplier;
             
-            //TODO: work out player knockback without stunlocking
-            //Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
-            //enemyAi.knockedBack = true;
-            //enemyAi.knockbackTimer = knockbackTime;
-            //erb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-        }
+        //TODO: work out player knockback without stunlocking
+        //Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
+        //enemyAi.knockedBack = true;
+        //enemyAi.knockbackTimer = knockbackTime;
+        //erb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
     }
 
     private void MovementUpdate()
@@ -147,8 +145,7 @@ public class EnemyAi : MonoBehaviour
             _rb.velocity = Vector2.ClampMagnitude(_rb.velocity, moveSpeed);
         }
     }
-
-    //TODO: you copied and pasted this from playercontroller so check it out in the morning
+    
     private void UpdateAnimation()
     {
         if (_facing is Facing.Left or Facing.Right)
