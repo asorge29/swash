@@ -219,7 +219,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //TODO: revise for left facing sprite and play swash animation on attack
+    //TODO: play swash animation on attack
     private void UpdateAnimation()
     {
         if (_moveDir.sqrMagnitude > 0)
@@ -232,8 +232,11 @@ public class PlayerController : MonoBehaviour
                 case Facing.Down:
                     _animator.CrossFade(_animMoveDown, 0);
                     break;
-                default:
+                case Facing.Right:
                     _animator.CrossFade(_animMoveRight, 0);
+                    break;
+                case Facing.Left:
+                    _animator.CrossFade(_animMoveLeft, 0);
                     break;
             }
         }
@@ -247,8 +250,11 @@ public class PlayerController : MonoBehaviour
                 case Facing.Down:
                     _animator.CrossFade(_animIdleDown, 0);
                     break;
-                default:
+                case Facing.Right:
                     _animator.CrossFade(_animIdleRight, 0);
+                    break;
+                case Facing.Left:
+                    _animator.CrossFade(_animIdleLeft, 0);
                     break;
             }
         }
