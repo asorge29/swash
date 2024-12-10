@@ -10,13 +10,13 @@ public class SoulAnchor : MonoBehaviour
     public SpriteRenderer SpriteRenderer;
     
     private Color soulColor;
-    void Start()
+    private void Start()
     {
         soulColor = new Color(AnchoredSpirit.soulColor.r, AnchoredSpirit.soulColor.g, AnchoredSpirit.soulColor.b, 1f);
         SpriteRenderer.color = soulColor;
     }
     
-    void Update()
+    private void Update()
     {
         CheckDead();
     }
