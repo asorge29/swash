@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Serialization;
+//TODO:this isnt done or tested
 public class SoulAnchor : MonoBehaviour
 {
     public float health = 1f;
     
-    public AnchoredSpirit AnchoredSpirit;
-    public SpriteRenderer SpriteRenderer;
+    public AnchoredSpirit anchoredSpirit;
+    public SpriteRenderer hazeRenderer;
+    public SpriteRenderer stringRenderer;
     
-    private Color soulColor;
+    private Color _soulColor;
     private void Start()
     {
-        soulColor = new Color(AnchoredSpirit.soulColor.r, AnchoredSpirit.soulColor.g, AnchoredSpirit.soulColor.b, 1f);
-        SpriteRenderer.color = soulColor;
+        _soulColor = new Color(anchoredSpirit.soulColor.r, anchoredSpirit.soulColor.g, anchoredSpirit.soulColor.b, 1f);
+        hazeRenderer.color = _soulColor;
+        stringRenderer.color = _soulColor;
     }
     
     private void Update()
@@ -25,7 +28,7 @@ public class SoulAnchor : MonoBehaviour
     {
         if (health <= 0)
         {
-            AnchoredSpirit.anchored = false;
+            anchoredSpirit.anchored = false;
             Destroy(gameObject);
         }
     }

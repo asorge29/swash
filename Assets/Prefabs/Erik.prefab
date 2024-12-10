@@ -99,7 +99,6 @@ MonoBehaviour:
   _rb: {fileID: 5297018788422125522}
   _animator: {fileID: 7753829721058668327}
   _spriteRenderer: {fileID: 6277887124349391674}
-  _audioSource: {fileID: 0}
   health: 0
 --- !u!50 &5297018788422125522
 Rigidbody2D:
@@ -290,7 +289,7 @@ SpriteRenderer:
   m_SortingLayerID: 1246892161
   m_SortingLayer: 4
   m_SortingOrder: 8
-  m_Sprite: {fileID: -1016888881, guid: 54fd0ebec2b0d4cabb41b73da3fd39f7, type: 3}
+  m_Sprite: {fileID: 1794005241, guid: a9c007d0d299d864898587fe15289122, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
