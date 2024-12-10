@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37967d617d6dbe43aa0b18eec026e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulColor: {r: 1, g: 0.29354292, b: 0, a: 0}
+  soulColor: {r: 0.09620428, g: 1, b: 0, a: 0}
   anchored: 0
 --- !u!1 &808209387
 GameObject:
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 914527499}
   m_Layer: 0
   m_Name: Soul Anchor
-  m_TagString: Untagged
+  m_TagString: Anchor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16701,7 +16701,7 @@ GameObject:
   - component: {fileID: 9095076675174623308}
   - component: {fileID: 2872381365721368095}
   m_Layer: 0
-  m_Name: Anchor Guy
+  m_Name: Spirit
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16727,9 +16727,11 @@ MonoBehaviour:
   attackCooldown: 1
   attackRange: 0.5
   damageMultiplier: 1
+  anchored: 1
   _rb: {fileID: 4775923479856930229}
   _animator: {fileID: 6944151024126408000}
   _spriteRenderer: {fileID: 6690728984037116253}
+  _anchoredSpirit: {fileID: 706595844}
   knockedBack: 0
   knockbackTimer: 0
 --- !u!70 &2872381365721368095

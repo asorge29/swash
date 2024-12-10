@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _spriteRenderer;
-    [SerializeField] AudioSource _audioSource;
+    //[SerializeField] AudioSource _audioSource;
 
     [HideInInspector] public float health;
 
@@ -92,6 +92,14 @@ public class PlayerController : MonoBehaviour
                 _enemiesInRange.Add(enemy);
             }
         }
+        else if (collision.gameObject.CompareTag("Anchor"))
+        {
+            var anchor = collision.gameObject;
+            if (anchor != null && !_enemiesInRange.Contains(anchor))
+            {
+                _enemiesInRange.Add(anchor);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -102,6 +110,14 @@ public class PlayerController : MonoBehaviour
             if (enemy != null && _enemiesInRange.Contains(enemy))
             {
                 _enemiesInRange.Remove(enemy);
+            }
+        }
+        else if (collision.gameObject.CompareTag("Anchor"))
+        {
+            var anchor = collision.gameObject;
+            if (anchor != null && _enemiesInRange.Contains(anchor))
+            {
+                _enemiesInRange.Remove(anchor);
             }
         }
     }
@@ -165,7 +181,7 @@ public class PlayerController : MonoBehaviour
         if (!(Time.time > attackCooldown + _lastAttack)) return;
         if (_enemiesInRange.Count <= 0) return;
         _lastAttack = Time.time;
-        _audioSource.Play();
+        //_audioSource.Play();
         foreach (var e in _enemiesInRange)
         {
             var erb = e.GetComponent<Rigidbody2D>();
@@ -189,6 +205,8 @@ public class PlayerController : MonoBehaviour
             } 
             
             var enemyAi = erb.GetComponent<EnemyAi>();
+
+            if (enemyAi.anchored) return;
 
             enemyAi.health -= damage * damageMultiplier;
 

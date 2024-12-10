@@ -15,10 +15,13 @@ public class EnemyAi : MonoBehaviour
     public float attackCooldown = 0.5f;
     public float attackRange = 0.5f;
     public float damageMultiplier = 1f;
+    
+    public bool anchored = false;
 
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _spriteRenderer;
+    [SerializeField] AnchoredSpirit _anchoredSpirit;
 
     private float _lastAttack;
 
@@ -31,6 +34,8 @@ public class EnemyAi : MonoBehaviour
     private GameObject _player;
     private PlayerController _playerController;
     private Vector2 _moveDir = Vector2.zero;
+    
+    private Color _spiritColor;
     
     private enum Facing
     {
@@ -55,6 +60,9 @@ public class EnemyAi : MonoBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerController = _player.GetComponent<PlayerController>();
+        if (!anchored) return;
+        _spiritColor = new Color(_anchoredSpirit.soulColor.r, _anchoredSpirit.soulColor.g, _anchoredSpirit.soulColor.b, 1);
+        _spriteRenderer.color = _spiritColor;
     }
 
     private void Update()
@@ -74,6 +82,11 @@ public class EnemyAi : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+
+        if (anchored)
+        {
+            anchored = _anchoredSpirit.anchored;
         }
     }
 
