@@ -222,11 +222,6 @@ public class PlayerController : MonoBehaviour
     //TODO: revise for left facing sprite and play swash animation on attack
     private void UpdateAnimation()
     {
-        if (_facing is Facing.Left or Facing.Right)
-        {
-            _spriteRenderer.flipX = _facing != Facing.Right;
-        }
-
         if (_moveDir.sqrMagnitude > 0)
         {
             switch (_facing)
