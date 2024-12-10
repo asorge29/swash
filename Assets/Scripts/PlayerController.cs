@@ -55,13 +55,13 @@ public class PlayerController : MonoBehaviour
     #region Animation References
 
     private readonly int _animMoveRight = Animator.StringToHash("anim_erik_walk_right");
-    private readonly int _animIdleRight = Animator.StringToHash("anim_player_idle_right");
+    private readonly int _animIdleRight = Animator.StringToHash("anim_erik_idle_right");
     private readonly int _animMoveLeft = Animator.StringToHash("anim_erik_walk_left");
-    private readonly int _animIdleLeft = Animator.StringToHash("anim_player_idle_left");
+    private readonly int _animIdleLeft = Animator.StringToHash("anim_erik_idle_left");
     private readonly int _animMoveUp = Animator.StringToHash("anim_erik_walk_up");
-    private readonly int _animIdleUp = Animator.StringToHash("anim_player_idle_up");
+    private readonly int _animIdleUp = Animator.StringToHash("anim_erik_idle_up");
     private readonly int _animMoveDown = Animator.StringToHash("anim_erik_walk_down");
-    private readonly int _animIdleDown = Animator.StringToHash("anim_player_idle_down");
+    private readonly int _animIdleDown = Animator.StringToHash("anim_erik_idle_down");
 
     #endregion
 

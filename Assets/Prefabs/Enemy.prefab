@@ -88,9 +88,11 @@ MonoBehaviour:
   attackCooldown: 1
   attackRange: 0.5
   damageMultiplier: 1
+  anchored: 0
   _rb: {fileID: 5297018788422125522}
   _animator: {fileID: 7753829721058668327}
   _spriteRenderer: {fileID: 6277887124349391674}
+  _anchoredSpirit: {fileID: 0}
   knockedBack: 0
   knockbackTimer: 0
 --- !u!50 &5297018788422125522
@@ -274,7 +276,7 @@ SpriteRenderer:
   m_SortingLayerID: 1246892161
   m_SortingLayer: 4
   m_SortingOrder: 4
-  m_Sprite: {fileID: -1016888881, guid: 54fd0ebec2b0d4cabb41b73da3fd39f7, type: 3}
+  m_Sprite: {fileID: 1794005241, guid: a9c007d0d299d864898587fe15289122, type: 3}
   m_Color: {r: 1, g: 0, b: 0.01994133, a: 1}
   m_FlipX: 0
   m_FlipY: 0
