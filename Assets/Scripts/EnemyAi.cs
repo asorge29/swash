@@ -18,6 +18,9 @@ public class EnemyAi : MonoBehaviour
     
     public bool anchored = false;
 
+    public Color hairColor;
+    public Color coatColor;
+
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _spriteRenderer;
