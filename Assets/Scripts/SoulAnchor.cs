@@ -26,10 +26,8 @@ public class SoulAnchor : MonoBehaviour
 
     private void CheckDead()
     {
-        if (health <= 0)
-        {
-            anchoredSpirit.anchored = false;
-            Destroy(gameObject);
-        }
+        if (health >= 0) return;
+        anchoredSpirit.anchored = false;
+        Destroy(gameObject);
     }
 }

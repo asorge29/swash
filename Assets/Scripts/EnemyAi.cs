@@ -163,11 +163,6 @@ public class EnemyAi : MonoBehaviour
     
     private void UpdateAnimation()
     {
-        if (_facing is Facing.Left or Facing.Right)
-        {
-            _spriteRenderer.flipX = _facing != Facing.Right;
-        }
-
         if (_moveDir.sqrMagnitude > 0)
         {
             switch (_facing)
@@ -178,8 +173,11 @@ public class EnemyAi : MonoBehaviour
                 case Facing.Down:
                     _animator.CrossFade(_animMoveDown, 0);
                     break;
-                default:
+                case Facing.Right:
                     _animator.CrossFade(_animMoveRight, 0);
+                    break;
+                case Facing.Left:
+                    _animator.CrossFade(_animMoveLeft, 0);
                     break;
             }
         }
@@ -193,8 +191,11 @@ public class EnemyAi : MonoBehaviour
                 case Facing.Down:
                     _animator.CrossFade(_animIdleDown, 0);
                     break;
-                default:
+                case Facing.Right:
                     _animator.CrossFade(_animIdleRight, 0);
+                    break;
+                case Facing.Left:
+                    _animator.CrossFade(_animIdleLeft, 0);
                     break;
             }
         }

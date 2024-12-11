@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private bool _dashCdown;
     private float _lastAttack;
 
-    private List<GameObject> _enemiesInRange = new List<GameObject>();
+    private readonly List<GameObject> _enemiesInRange = new();
 
     private Facing _facing = Facing.Left;
     private Vector3 _mousePos;
@@ -94,14 +94,6 @@ public class PlayerController : MonoBehaviour
                 _enemiesInRange.Add(enemy);
             }
         }
-        else if (collision.gameObject.CompareTag("Anchor"))
-        {
-            var anchor = collision.gameObject;
-            if (anchor != null && !_enemiesInRange.Contains(anchor))
-            {
-                _enemiesInRange.Add(anchor);
-            }
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -112,14 +104,6 @@ public class PlayerController : MonoBehaviour
             if (enemy != null && _enemiesInRange.Contains(enemy))
             {
                 _enemiesInRange.Remove(enemy);
-            }
-        }
-        else if (collision.gameObject.CompareTag("Anchor"))
-        {
-            var anchor = collision.gameObject;
-            if (anchor != null && _enemiesInRange.Contains(anchor))
-            {
-                _enemiesInRange.Remove(anchor);
             }
         }
     }
