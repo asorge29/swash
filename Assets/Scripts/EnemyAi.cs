@@ -163,6 +163,8 @@ public class EnemyAi : MonoBehaviour
             _rb.velocity = Vector2.ClampMagnitude(_rb.velocity, moveSpeed);
         }
     }
+
+    //TODO: public take damage function
     
     private void UpdateAnimation()
     {

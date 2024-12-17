@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Island 2.1.unity
     guid: 8599c8e1284e9764e95a8c0cf7a3c78a
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Cutscene 1/Intro Cutscene.unity
+    guid: 4058332745b83374ebc7219d8af375e7
   m_configObjects: {}

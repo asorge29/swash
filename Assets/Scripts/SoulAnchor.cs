@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
-//TODO:this isnt done or tested
+
 public class SoulAnchor : MonoBehaviour
 {
     public float health = 1f;
