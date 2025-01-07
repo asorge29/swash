@@ -22,7 +22,8 @@ public class EnemyAi : MonoBehaviour
     public Color coatColor;
 
     [SerializeField] Rigidbody2D _rb;
-    [SerializeField] Animator _animator;
+    [SerializeField] Animator _bodyAnimator;
+    [SerializeField] Animator _clothesAnimator;
     [SerializeField] SpriteRenderer _spriteRenderer;
     [SerializeField] AnchoredSpirit _anchoredSpirit;
 
@@ -50,14 +51,14 @@ public class EnemyAi : MonoBehaviour
 
     #region Animation References
 
-    private readonly int _animMoveRight = Animator.StringToHash("anim_erik_walk_right");
-    private readonly int _animIdleRight = Animator.StringToHash("anim_erik_idle_right");
-    private readonly int _animMoveLeft = Animator.StringToHash("anim_erik_walk_left");
-    private readonly int _animIdleLeft = Animator.StringToHash("anim_erik_idle_left");
-    private readonly int _animMoveUp = Animator.StringToHash("anim_erik_walk_up");
-    private readonly int _animIdleUp = Animator.StringToHash("anim_erik_idle_up");
-    private readonly int _animMoveDown = Animator.StringToHash("anim_erik_walk_down");
-    private readonly int _animIdleDown = Animator.StringToHash("anim_erik_idle_down");
+    private readonly int _animBodyMoveRight = Animator.StringToHash("anim_enemy_body_walk_right");
+    private readonly int _animBodyIdleRight = Animator.StringToHash("anim_enemy_body_idle_right");
+    private readonly int _animBodyMoveLeft = Animator.StringToHash("anim_enemy_body_walk_left");
+    private readonly int _animBodyIdleLeft = Animator.StringToHash("anim_enemy_body_idle_left");
+    private readonly int _animBodyMoveUp = Animator.StringToHash("anim_enemy_body_walk_up");
+    private readonly int _animBodyIdleUp = Animator.StringToHash("anim_enemy_body_idle_up");
+    private readonly int _animBodyMoveDown = Animator.StringToHash("anim_enemy_body_walk_down");
+    private readonly int _animBodyIdleDown = Animator.StringToHash("anim_enemy_body_idle_down");
 
     #endregion
 
@@ -173,16 +174,16 @@ public class EnemyAi : MonoBehaviour
             switch (_facing)
             {
                 case Facing.Up:
-                    _animator.CrossFade(_animMoveUp, 0);
+                    _bodyAnimator.CrossFade(_animBodyMoveUp, 0);
                     break;
                 case Facing.Down:
-                    _animator.CrossFade(_animMoveDown, 0);
+                    _bodyAnimator.CrossFade(_animBodyMoveDown, 0);
                     break;
                 case Facing.Right:
-                    _animator.CrossFade(_animMoveRight, 0);
+                    _bodyAnimator.CrossFade(_animBodyMoveRight, 0);
                     break;
                 case Facing.Left:
-                    _animator.CrossFade(_animMoveLeft, 0);
+                    _bodyAnimator.CrossFade(_animBodyMoveLeft, 0);
                     break;
             }
         }
@@ -191,16 +192,16 @@ public class EnemyAi : MonoBehaviour
             switch (_facing)
             {
                 case Facing.Up:
-                    _animator.CrossFade(_animIdleUp, 0);
+                    _bodyAnimator.CrossFade(_animBodyIdleUp, 0);
                     break;
                 case Facing.Down:
-                    _animator.CrossFade(_animIdleDown, 0);
+                    _bodyAnimator.CrossFade(_animBodyIdleDown, 0);
                     break;
                 case Facing.Right:
-                    _animator.CrossFade(_animIdleRight, 0);
+                    _bodyAnimator.CrossFade(_animBodyIdleRight, 0);
                     break;
                 case Facing.Left:
-                    _animator.CrossFade(_animIdleLeft, 0);
+                    _bodyAnimator.CrossFade(_animBodyIdleLeft, 0);
                     break;
             }
         }
