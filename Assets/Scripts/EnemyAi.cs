@@ -23,7 +23,8 @@ public class EnemyAi : MonoBehaviour
 
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _bodyAnimator;
-    [SerializeField] Animator _clothesAnimator;
+    [SerializeField] Animator _shirtAnimator;
+    [SerializeField] Animator _hairRenderer;
     [SerializeField] SpriteRenderer _spriteRenderer;
     [SerializeField] AnchoredSpirit _anchoredSpirit;
 
@@ -59,6 +60,24 @@ public class EnemyAi : MonoBehaviour
     private readonly int _animBodyIdleUp = Animator.StringToHash("anim_enemy_body_idle_up");
     private readonly int _animBodyMoveDown = Animator.StringToHash("anim_enemy_body_walk_down");
     private readonly int _animBodyIdleDown = Animator.StringToHash("anim_enemy_body_idle_down");
+
+    private readonly int _animShirtMoveRight = Animator.StringToHash("anim_enemy_shirt_walk_right");
+    private readonly int _animShirtIdleRight = Animator.StringToHash("anim_enemy_shirt_idle_right");
+    private readonly int _animShirtMoveLeft = Animator.StringToHash("anim_enemy_shirt_walk_left");
+    private readonly int _animShirtIdleLeft = Animator.StringToHash("anim_enemy_shirt_idle_left");
+    private readonly int _animShirtMoveUp = Animator.StringToHash("anim_enemy_shirt_walk_up");
+    private readonly int _animShirtIdleUp = Animator.StringToHash("anim_enemy_shirt_idle_up");
+    private readonly int _animShirtMoveDown = Animator.StringToHash("anim_enemy_shirt_walk_down");
+    private readonly int _animShirtIdleDown = Animator.StringToHash("anim_enemy_shirt_idle_down");
+
+    private readonly int _animHairMoveRight = Animator.StringToHash("anim_enemy_hair_walk_right");
+    private readonly int _animHairIdleRight = Animator.StringToHash("anim_enemy_hair_idle_right");
+    private readonly int _animHairMoveLeft = Animator.StringToHash("anim_enemy_hair_walk_left");
+    private readonly int _animHairIdleLeft = Animator.StringToHash("anim_enemy_hair_idle_left");
+    private readonly int _animHairMoveUp = Animator.StringToHash("anim_enemy_hair_walk_up");
+    private readonly int _animHairIdleUp = Animator.StringToHash("anim_enemy_hair_idle_up");
+    private readonly int _animHairMoveDown = Animator.StringToHash("anim_enemy_hair_walk_down");
+    private readonly int _animHairIdleDown = Animator.StringToHash("anim_enemy_hair_idle_down");
 
     #endregion
 
@@ -175,15 +194,23 @@ public class EnemyAi : MonoBehaviour
             {
                 case Facing.Up:
                     _bodyAnimator.CrossFade(_animBodyMoveUp, 0);
+                    _shirtAnimator.CrossFade(_animShirtMoveUp, 0);
+                    _hairRenderer.CrossFade(_animHairMoveUp, 0);
                     break;
                 case Facing.Down:
                     _bodyAnimator.CrossFade(_animBodyMoveDown, 0);
+                    _shirtAnimator.CrossFade(_animShirtMoveDown, 0);
+                    _hairRenderer.CrossFade(_animHairMoveDown, 0);
                     break;
                 case Facing.Right:
                     _bodyAnimator.CrossFade(_animBodyMoveRight, 0);
+                    _shirtAnimator.CrossFade(_animShirtMoveRight, 0);
+                    _hairRenderer.CrossFade(_animHairMoveRight, 0);
                     break;
                 case Facing.Left:
                     _bodyAnimator.CrossFade(_animBodyMoveLeft, 0);
+                    _shirtAnimator.CrossFade(_animShirtMoveLeft, 0);
+                    _hairRenderer.CrossFade(_animHairMoveLeft, 0);
                     break;
             }
         }
@@ -193,15 +220,23 @@ public class EnemyAi : MonoBehaviour
             {
                 case Facing.Up:
                     _bodyAnimator.CrossFade(_animBodyIdleUp, 0);
+                    _shirtAnimator.CrossFade(_animShirtIdleUp, 0);
+                    _hairRenderer.CrossFade(_animHairIdleUp, 0);
                     break;
                 case Facing.Down:
                     _bodyAnimator.CrossFade(_animBodyIdleDown, 0);
+                    _shirtAnimator.CrossFade(_animShirtIdleDown, 0);
+                    _hairRenderer.CrossFade(_animHairIdleDown, 0);
                     break;
                 case Facing.Right:
                     _bodyAnimator.CrossFade(_animBodyIdleRight, 0);
+                    _shirtAnimator.CrossFade(_animShirtIdleRight, 0);
+                    _hairRenderer.CrossFade(_animHairIdleRight, 0);
                     break;
                 case Facing.Left:
                     _bodyAnimator.CrossFade(_animBodyIdleLeft, 0);
+                    _shirtAnimator.CrossFade(_animShirtIdleLeft, 0);
+                    _hairRenderer.CrossFade(_animHairIdleLeft, 0);
                     break;
             }
         }
