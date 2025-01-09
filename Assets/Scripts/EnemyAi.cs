@@ -24,7 +24,9 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _bodyAnimator;
     [SerializeField] Animator _shirtAnimator;
-    [SerializeField] Animator _hairRenderer;
+    [SerializeField] Animator _hairAnimator;
+    [SerializeField] SpriteRenderer _shirtRenderer;
+    [SerializeField] SpriteRenderer _hairRenderer;
     [SerializeField] SpriteRenderer _spriteRenderer;
     [SerializeField] AnchoredSpirit _anchoredSpirit;
 
@@ -85,6 +87,8 @@ public class EnemyAi : MonoBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerController = _player.GetComponent<PlayerController>();
+        _hairRenderer.color = new Color(hairColor.r, hairColor.g, hairColor.b, 1);
+        _shirtRenderer.color = new Color(coatColor.r, coatColor.g, coatColor.b, 1);
         if (!anchored) return;
         _spiritColor = new Color(_anchoredSpirit.soulColor.r, _anchoredSpirit.soulColor.g, _anchoredSpirit.soulColor.b, 1);
         _spriteRenderer.color = _spiritColor;
@@ -195,22 +199,22 @@ public class EnemyAi : MonoBehaviour
                 case Facing.Up:
                     _bodyAnimator.CrossFade(_animBodyMoveUp, 0);
                     _shirtAnimator.CrossFade(_animShirtMoveUp, 0);
-                    _hairRenderer.CrossFade(_animHairMoveUp, 0);
+                    _hairAnimator.CrossFade(_animHairMoveUp, 0);
                     break;
                 case Facing.Down:
                     _bodyAnimator.CrossFade(_animBodyMoveDown, 0);
                     _shirtAnimator.CrossFade(_animShirtMoveDown, 0);
-                    _hairRenderer.CrossFade(_animHairMoveDown, 0);
+                    _hairAnimator.CrossFade(_animHairMoveDown, 0);
                     break;
                 case Facing.Right:
                     _bodyAnimator.CrossFade(_animBodyMoveRight, 0);
                     _shirtAnimator.CrossFade(_animShirtMoveRight, 0);
-                    _hairRenderer.CrossFade(_animHairMoveRight, 0);
+                    _hairAnimator.CrossFade(_animHairMoveRight, 0);
                     break;
                 case Facing.Left:
                     _bodyAnimator.CrossFade(_animBodyMoveLeft, 0);
                     _shirtAnimator.CrossFade(_animShirtMoveLeft, 0);
-                    _hairRenderer.CrossFade(_animHairMoveLeft, 0);
+                    _hairAnimator.CrossFade(_animHairMoveLeft, 0);
                     break;
             }
         }
@@ -221,22 +225,22 @@ public class EnemyAi : MonoBehaviour
                 case Facing.Up:
                     _bodyAnimator.CrossFade(_animBodyIdleUp, 0);
                     _shirtAnimator.CrossFade(_animShirtIdleUp, 0);
-                    _hairRenderer.CrossFade(_animHairIdleUp, 0);
+                    _hairAnimator.CrossFade(_animHairIdleUp, 0);
                     break;
                 case Facing.Down:
                     _bodyAnimator.CrossFade(_animBodyIdleDown, 0);
                     _shirtAnimator.CrossFade(_animShirtIdleDown, 0);
-                    _hairRenderer.CrossFade(_animHairIdleDown, 0);
+                    _hairAnimator.CrossFade(_animHairIdleDown, 0);
                     break;
                 case Facing.Right:
                     _bodyAnimator.CrossFade(_animBodyIdleRight, 0);
                     _shirtAnimator.CrossFade(_animShirtIdleRight, 0);
-                    _hairRenderer.CrossFade(_animHairIdleRight, 0);
+                    _hairAnimator.CrossFade(_animHairIdleRight, 0);
                     break;
                 case Facing.Left:
                     _bodyAnimator.CrossFade(_animBodyIdleLeft, 0);
                     _shirtAnimator.CrossFade(_animShirtIdleLeft, 0);
-                    _hairRenderer.CrossFade(_animHairIdleLeft, 0);
+                    _hairAnimator.CrossFade(_animHairIdleLeft, 0);
                     break;
             }
         }

@@ -91,12 +91,14 @@ MonoBehaviour:
   attackRange: 0.5
   damageMultiplier: 1
   anchored: 0
-  hairColor: {r: 0, g: 0, b: 0, a: 0}
-  coatColor: {r: 0, g: 0, b: 0, a: 0}
+  hairColor: {r: 0.4811321, g: 0.09582352, b: 0, a: 0}
+  coatColor: {r: 0.8962264, g: 0, b: 0, a: 0}
   _rb: {fileID: 5297018788422125522}
   _bodyAnimator: {fileID: 6428622527159464102}
   _shirtAnimator: {fileID: 4147824182587636840}
-  _hairRenderer: {fileID: 5803779989950799337}
+  _hairAnimator: {fileID: 5803779989950799337}
+  _shirtRenderer: {fileID: 4082683948687585277}
+  _hairRenderer: {fileID: 7227189156554843086}
   _spriteRenderer: {fileID: 0}
   _anchoredSpirit: {fileID: 0}
   knockedBack: 0
