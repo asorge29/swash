@@ -6,20 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class WorldManager : MonoBehaviour
 {
-    private EnemyAi[] enemies;
+    //private EnemyAi[] enemies;
     
     void Start()
     {
-        enemies = FindObjectsOfType<EnemyAi>();
+        //enemies = FindObjectsOfType<EnemyAi>();
     }
     
     void FixedUpdate()
     {
-        enemies = FindObjectsOfType<EnemyAi>();
+        //enemies = FindObjectsOfType<EnemyAi>();
         
-        if (enemies.Length <= 0)
+        //if (enemies.Length <= 0)
         {
-            SceneManager.LoadScene("Scenes/Cutscenes/Cutscene 1/Intro Cutscene");
+            //SceneManager.LoadScene("Scenes/Cutscenes/Cutscene 1/Intro Cutscene");
         }
     }
 

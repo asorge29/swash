@@ -11,20 +11,20 @@ namespace UI
         void Start()
         {
             _slider = GetComponent<Slider>();
-            _slider.maxValue = player.maxHealth;
-            _slider.value = player.health;
+            _slider.maxValue = player.startingHealth;
+            _slider.value = player.GetHealth();
         }
     
         void Update()
         {
-            if (player.health != _slider.value)
+            if (player.GetHealth() != _slider.value)
             {
-                _slider.value = player.health;
+                _slider.value = player.GetHealth();
             }
 
-            if (player.maxHealth != _slider.maxValue)
+            if (player.startingHealth != _slider.maxValue)
             {
-                _slider.maxValue = player.maxHealth;
+                _slider.maxValue = player.startingHealth;
             }
         }
     }

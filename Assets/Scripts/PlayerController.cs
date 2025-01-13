@@ -7,21 +7,15 @@ using UnityEngine;
 [SelectionBase]
 public class PlayerController : MonoBehaviour
 {
-    public int lives = 3;
-    public int maxHealth = 100;
-    public float regenerationRate = 0.5f;
-
+    public int startingHealth = 100;
     public float moveSpeed = 5f;
     public float acceleration = 50f;
-    public bool dashAbility = false;
 
     public float attackCooldown = 0.5f;
-    public float attackRange = 0.5f;
     public float knockbackForce = 5f;
     public float knockbackTime = 0.2f;
     public float damage = 20f;
     public float damageMultiplier = 1f;
-    public bool visible = true;
 
     public float coins = 0f;
     public float goldEarnRate = 1f;
@@ -31,10 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] SpriteRenderer _spriteRenderer;
     //[SerializeField] AudioSource _audioSource;
 
-    [HideInInspector] public float health;
-
-    private bool _canDash;
-    private bool _dashCdown;
+    private float _health;
     private float _lastAttack;
 
     private readonly List<GameObject> _enemiesInRange = new();
@@ -42,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private Facing _facing = Facing.Left;
     private Vector3 _mousePos;
     private Vector2 _moveDir = Vector2.zero;
-    private float _facingAngle = 0f;
+    private float _facingAngle;
 
     private enum Facing
     {
@@ -67,8 +58,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        health = maxHealth;
         _lastAttack = Time.time - attackCooldown;
+        _health = startingHealth;
     }
 
     private void Update()
@@ -82,6 +73,16 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         MovementUpdate();
+    }
+
+    public float GetHealth()
+    {
+        return _health;
+    }
+    
+    public void TakeDamage(float incomingDamage)
+    {
+        _health -= incomingDamage;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -113,7 +114,7 @@ public class PlayerController : MonoBehaviour
         _moveDir.x = Input.GetAxisRaw("Horizontal");
         _moveDir.y = Input.GetAxisRaw("Vertical");
 
-        _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Camera.main != null) _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _facingAngle = Vector2.SignedAngle(Vector2.right, (Vector2)_mousePos - (Vector2)transform.position);
 
         _facing = _facingAngle switch
@@ -142,13 +143,11 @@ public class PlayerController : MonoBehaviour
 
     private void CheckDead()
     {
-        if (health <= 0)
-        {
+        if (_health > 0) return;
 #if UNITY_EDITOR
             EditorApplication.ExitPlaymode();
 #endif
             Application.Quit();
-        }
     }
 
     private static void Escape()
@@ -167,13 +166,12 @@ public class PlayerController : MonoBehaviour
         if (!(Time.time > attackCooldown + _lastAttack)) return;
         if (_enemiesInRange.Count <= 0) return;
         _lastAttack = Time.time;
-        //_audioSource.Play();
         foreach (var e in _enemiesInRange)
         {
             var erb = e.GetComponent<Rigidbody2D>();
             
             var angle = Vector2.SignedAngle(Vector2.right, erb.position - (Vector2)transform.position);
-
+//TODO: make this dependent on cursor rather than facing status
             switch (_facing)
             {
                 case Facing.Up:
@@ -190,15 +188,15 @@ public class PlayerController : MonoBehaviour
                     break;
             } 
             
-            var enemyAi = erb.GetComponent<EnemyAi>();
+            //var enemyAi = erb.GetComponent<EnemyAi>();
 
-            if (enemyAi.anchored) return;
+            //if (enemyAi.anchored) return;
 
-            enemyAi.health -= damage * damageMultiplier;
+            //enemyAi.health -= damage * damageMultiplier;
 
             Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
-            enemyAi.knockedBack = true;
-            enemyAi.knockbackTimer = knockbackTime;
+            //enemyAi.knockedBack = true;
+            //enemyAi.knockbackTimer = knockbackTime;
             erb.AddForce(knockbackDirection * (knockbackForce + _rb.velocity.magnitude), ForceMode2D.Impulse);
         }
     }

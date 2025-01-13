@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fefb30fdd22bf324a8e7e4e247623c58
+guid: a9c007d0d299d864898587fe15289122
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -98,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_0
+      name: img_erik_walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57805bb6bcaab4d4888ff08a9966f915
-      internalID: 2141690923
+      spriteID: 29f5a75fb019da1418e6e26e0ca7a07d
+      internalID: 1161780028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_1
+      name: img_erik_walk_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae33fd559b86ece4f832ee50ceebc735
-      internalID: 1675924156
+      spriteID: 1f79851147837294ca0e55f9431814fd
+      internalID: -1559631631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_2
+      name: img_erik_walk_2
       rect:
         serializedVersion: 2
         x: 128
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b192cb98efb63448094db6bcde93db
-      internalID: -1831715296
+      spriteID: 734e5dc861e55844ea7e42f987267570
+      internalID: -2074340269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_3
+      name: img_erik_walk_3
       rect:
         serializedVersion: 2
         x: 192
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbca6fe6d53c46f4391294d967170731
-      internalID: 1203325623
+      spriteID: 00ac020bb464f414f834f78c875b6d98
+      internalID: -640012872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_4
+      name: img_erik_walk_4
       rect:
         serializedVersion: 2
         x: 256
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08f9263404d7f324cacc7822e8d6f20b
-      internalID: 1104071154
+      spriteID: 66a8f549001cb244fa286a6037ad2e90
+      internalID: 1049729622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_5
+      name: img_erik_walk_5
       rect:
         serializedVersion: 2
         x: 320
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4457a06b4d8af374eb7603694b6cdbc2
-      internalID: -400027470
+      spriteID: bd844884e2bb7c3468b320ca0a2727a4
+      internalID: -418699105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_6
+      name: img_erik_walk_6
       rect:
         serializedVersion: 2
         x: 384
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adacbb034498fab4fa81f9d83805831d
-      internalID: 1524364094
+      spriteID: f956113f2297eed4686cd692318f9ca9
+      internalID: -157785300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_7
+      name: img_erik_walk_7
       rect:
         serializedVersion: 2
         x: 448
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8717a65852b9eb94a9e70af1ba952f05
-      internalID: -732823284
+      spriteID: d0b73b3a5c4f54f48936f2a7839bc120
+      internalID: 1485738796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_8
+      name: img_erik_walk_8
       rect:
         serializedVersion: 2
         x: 512
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faf2206d6de660a4f9b4014bff44f0b4
-      internalID: -1373532503
+      spriteID: 9c6328d7bd78f174b8402fabd4b31d8d
+      internalID: 1665722292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_9
+      name: img_erik_walk_9
       rect:
         serializedVersion: 2
         x: 0
@@ -326,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db7c38f69639e5042942800867f0e647
-      internalID: -432768052
+      spriteID: 9633d2324ccc6b04ca6123d1dbb45186
+      internalID: 1775019264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_10
+      name: img_erik_walk_10
       rect:
         serializedVersion: 2
         x: 64
@@ -347,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b318d75b6cd154d4d885f146cd0185a5
-      internalID: -616096620
+      spriteID: 921aeeb2df38ff74dab412ccfa4584a8
+      internalID: -1787792754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_11
+      name: img_erik_walk_11
       rect:
         serializedVersion: 2
         x: 128
@@ -368,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18747fda8ae7d5743b7454a8a43d6528
-      internalID: -1705123488
+      spriteID: 30eb532698f3ac54593f27c78e9409bb
+      internalID: 123999375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_12
+      name: img_erik_walk_12
       rect:
         serializedVersion: 2
         x: 192
@@ -389,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b34e7f280d323e41b08545fb9cb2eec
-      internalID: 1606877787
+      spriteID: e2dbce4f33ee4dd45866b7ae7922340f
+      internalID: -1827243709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_13
+      name: img_erik_walk_13
       rect:
         serializedVersion: 2
         x: 256
@@ -410,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 002005b688de0614a857e6e05ee67b3f
-      internalID: 1323987231
+      spriteID: a210b7c055a785d4dbacfdf75f636bf4
+      internalID: -1354479797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_14
+      name: img_erik_walk_14
       rect:
         serializedVersion: 2
         x: 320
@@ -431,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d27684178b9726f4b8b094ba8241c11a
-      internalID: 463698198
+      spriteID: 31ecfdb665f2ec34da4a46816d20eecf
+      internalID: 87533398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_15
+      name: img_erik_walk_15
       rect:
         serializedVersion: 2
         x: 384
@@ -452,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6802954cfd80e94095cf1f3cec38b45
-      internalID: 1197718027
+      spriteID: 8c9587e9bdb4454448c7d62bb7249de0
+      internalID: 1412728524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_16
+      name: img_erik_walk_16
       rect:
         serializedVersion: 2
         x: 448
@@ -473,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 295fcbff31cefa640936b78c39f5e50f
-      internalID: -1201920862
+      spriteID: 02b82f372978d1841b7698b9a83fc572
+      internalID: -1733136907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_17
+      name: img_erik_walk_17
       rect:
         serializedVersion: 2
         x: 512
@@ -494,14 +494,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07d32bc90fdc12b4fbda737394dc7c1d
-      internalID: -1980034246
+      spriteID: 34d617b6db0abb44ab3b56471fe9728f
+      internalID: 1794005241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_18
+      name: img_erik_walk_18
       rect:
         serializedVersion: 2
         x: 0
@@ -515,14 +515,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40b5834f81f8687418ad889f622e4eb1
-      internalID: -1882664129
+      spriteID: 5b9c526e8e5d48649b9581dfc099ed41
+      internalID: -455009408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_19
+      name: img_erik_walk_19
       rect:
         serializedVersion: 2
         x: 64
@@ -536,14 +536,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 632aeaa6f11475b4283f4008d8a49b72
-      internalID: -1879180178
+      spriteID: f4faf55a01fe4fd4a87039e0288acc5d
+      internalID: -296449189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_20
+      name: img_erik_walk_20
       rect:
         serializedVersion: 2
         x: 128
@@ -557,14 +557,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3180175b7fe87d34bb3c9be78d925bc9
-      internalID: -78819161
+      spriteID: 0b1824afe794d5440912b3de311a5133
+      internalID: -1850134659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_21
+      name: img_erik_walk_21
       rect:
         serializedVersion: 2
         x: 192
@@ -578,14 +578,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e854c9300010f44d9045b7603136276
-      internalID: 1959868543
+      spriteID: 33a64bbf7ae0e2946a61de2fa1cc4384
+      internalID: 339909188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_22
+      name: img_erik_walk_22
       rect:
         serializedVersion: 2
         x: 256
@@ -599,14 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fee93914b354e2468e3aa9c8261fdbf
-      internalID: -1706792027
+      spriteID: 88d3ac19798f9c44a83a3579ecf2895b
+      internalID: 1367399531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_23
+      name: img_erik_walk_23
       rect:
         serializedVersion: 2
         x: 320
@@ -620,14 +620,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7f3bc4124504dd4dbc1fb5230fc60a8
-      internalID: -1741347133
+      spriteID: 817ced4415195024786456d45b9bc71c
+      internalID: 1639751071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_24
+      name: img_erik_walk_24
       rect:
         serializedVersion: 2
         x: 384
@@ -641,14 +641,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c61c43d7b490e424c8caa3ce8dabb4c5
-      internalID: 875361347
+      spriteID: a7970f0147d0eb943845146fc794619e
+      internalID: 1483274837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_25
+      name: img_erik_walk_25
       rect:
         serializedVersion: 2
         x: 448
@@ -662,14 +662,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23f4d11ca7da8b24896cc42a7b9c307f
-      internalID: 555571775
+      spriteID: e1cb6252a70269041a02861719566ce0
+      internalID: -406346600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_26
+      name: img_erik_walk_26
       rect:
         serializedVersion: 2
         x: 512
@@ -683,14 +683,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c126b1fba16f0b4ab079cdaeadcc6c6
-      internalID: 1132521216
+      spriteID: 8dc02d6c0a3004c4a9b2bd8ba6acdd93
+      internalID: -979495408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_27
+      name: img_erik_walk_27
       rect:
         serializedVersion: 2
         x: 0
@@ -704,14 +704,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3d972f8632b6bf4dabd645eff8eb54c
-      internalID: 1595278630
+      spriteID: 139161bf4ed61524fb1b66e02aedfb54
+      internalID: 16739728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_28
+      name: img_erik_walk_28
       rect:
         serializedVersion: 2
         x: 64
@@ -725,14 +725,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abc1ab1e3b871894da336b69fe0fee9e
-      internalID: -2028857457
+      spriteID: 57af183641eba794a92aa83f7bf4558d
+      internalID: 416861640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_29
+      name: img_erik_walk_29
       rect:
         serializedVersion: 2
         x: 128
@@ -746,14 +746,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 197038f9e82e71c49918480d071a5c76
-      internalID: -454239706
+      spriteID: 55d8dbc2aa0e9f448a1b1f4c8cdb5ed1
+      internalID: -388894877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_30
+      name: img_erik_walk_30
       rect:
         serializedVersion: 2
         x: 192
@@ -767,14 +767,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbc3ed0cff4f85e49bbc0b63a575daaa
-      internalID: 155842939
+      spriteID: d89654f3c7b20a549add63c7830c49e9
+      internalID: 2031486880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_31
+      name: img_erik_walk_31
       rect:
         serializedVersion: 2
         x: 256
@@ -788,14 +788,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a20db165fbe09bf4f987dab18546df9f
-      internalID: 1889955574
+      spriteID: 8e52c19185a275644a43d1c376777557
+      internalID: 39908355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_32
+      name: img_erik_walk_32
       rect:
         serializedVersion: 2
         x: 320
@@ -809,14 +809,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa5ae5992041e1e45a0665bf29d5b667
-      internalID: -547052102
+      spriteID: e4da5c4b806fef248aa1fecc028c3c32
+      internalID: -1168496938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_33
+      name: img_erik_walk_33
       rect:
         serializedVersion: 2
         x: 384
@@ -830,14 +830,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2239448096694e7499841013c96f595c
-      internalID: -1941707958
+      spriteID: 853931cc30c071a42af6fbe745cfc29a
+      internalID: -1442733395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_34
+      name: img_erik_walk_34
       rect:
         serializedVersion: 2
         x: 448
@@ -851,14 +851,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23e51bcc6d4c0364ea5bef7cc7f565b1
-      internalID: 638419046
+      spriteID: 0f37d4c798b2a094481c9503112819f9
+      internalID: -1661056132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_35
+      name: img_erik_walk_35
       rect:
         serializedVersion: 2
         x: 512
@@ -872,14 +872,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d646da30f31eaf4984b21ef08842a19
-      internalID: 1386592851
+      spriteID: 5c2c6bfabbd4a5943baba784d8346b9f
+      internalID: 504815168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_36
+      name: img_erik_walk_36
       rect:
         serializedVersion: 2
         x: 0
@@ -893,14 +893,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54e22eeb4c15860478f1899182d8ec1b
-      internalID: -2127527322
+      spriteID: 24e5dbac499d8744ab9a14dce4bfb37e
+      internalID: 837057042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_37
+      name: img_erik_walk_37
       rect:
         serializedVersion: 2
         x: 64
@@ -914,14 +914,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b51ec34b0304a9743ba8aeb057b95341
-      internalID: 92665701
+      spriteID: 24fdee089f16be04c92afef3cb072e05
+      internalID: -574284893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_38
+      name: img_erik_walk_38
       rect:
         serializedVersion: 2
         x: 128
@@ -935,14 +935,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9118988963686f444929dee2c0962b68
-      internalID: -874246165
+      spriteID: 452197d1645846a438d0793915f968bf
+      internalID: -1061478124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_39
+      name: img_erik_walk_39
       rect:
         serializedVersion: 2
         x: 192
@@ -956,14 +956,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b391a988204ac7b40a0d36dc50369cd0
-      internalID: -423559264
+      spriteID: 243e1e983ab54724ea9e5f7541c7b9b6
+      internalID: 504533147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_40
+      name: img_erik_walk_40
       rect:
         serializedVersion: 2
         x: 256
@@ -977,14 +977,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27e40cdb220cf8140b87f02b390923ae
-      internalID: -14101621
+      spriteID: d51b444a04e4b6649896c6e056a642c3
+      internalID: 1233615193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_41
+      name: img_erik_walk_41
       rect:
         serializedVersion: 2
         x: 320
@@ -998,14 +998,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0edbc888cb5d2184b8544de9d5660c44
-      internalID: 58882982
+      spriteID: 954776438d5199e4bb517904f4e28df6
+      internalID: 701312341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_42
+      name: img_erik_walk_42
       rect:
         serializedVersion: 2
         x: 384
@@ -1019,14 +1019,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca1a5de7130c39c4b972375f3d58e518
-      internalID: -417455527
+      spriteID: 0c5025dd3c31ca7459e0ebe37d3876ab
+      internalID: 77417309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_43
+      name: img_erik_walk_43
       rect:
         serializedVersion: 2
         x: 448
@@ -1040,14 +1040,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28afbddcf1010c3419e97b03a576341a
-      internalID: -1127551286
+      spriteID: 8dadc2f7f37c53548b06fddd21505b73
+      internalID: -1237664683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_44
+      name: img_erik_walk_44
       rect:
         serializedVersion: 2
         x: 512
@@ -1061,14 +1061,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcbd9bd1826a7c54fafc5ffef2e5a2ab
-      internalID: -1180002731
+      spriteID: 4be6364f7d26db84cb1850e3b621ec14
+      internalID: 155862404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_45
+      name: img_erik_walk_45
       rect:
         serializedVersion: 2
         x: 0
@@ -1082,14 +1082,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9f39985fb7ba5c40bd7b3ebde257e43
-      internalID: -317452996
+      spriteID: d137a3b05c169094a95cb0944f9959d4
+      internalID: -749909142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_46
+      name: img_erik_walk_46
       rect:
         serializedVersion: 2
         x: 64
@@ -1103,14 +1103,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 731c9a0af8bb815499b85b6dcc24e4d6
-      internalID: -391520571
+      spriteID: 908b14679b7747b4e806f8b87dbf6482
+      internalID: 586009085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_47
+      name: img_erik_walk_47
       rect:
         serializedVersion: 2
         x: 128
@@ -1124,14 +1124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2d7d7fd1c3b5dd4ba83d391918b7efa
-      internalID: -721790848
+      spriteID: 0cf77bab4ca96204f9a1c7b18d728bfe
+      internalID: 894851319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_48
+      name: img_erik_walk_48
       rect:
         serializedVersion: 2
         x: 192
@@ -1145,14 +1145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a67b305cdffe1e146ad23d807141a348
-      internalID: -208837338
+      spriteID: f1f28ef88102f82478da23e3d7488d3e
+      internalID: -414017643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_49
+      name: img_erik_walk_49
       rect:
         serializedVersion: 2
         x: 256
@@ -1166,14 +1166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 012af2dbf10e3004b88d385bdaaab07c
-      internalID: 189162309
+      spriteID: b12cb0d3125deff43939b5e3267a9178
+      internalID: 182369811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_50
+      name: img_erik_walk_50
       rect:
         serializedVersion: 2
         x: 320
@@ -1187,14 +1187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3b000f34f53f4e49919a32f9dd8f491
-      internalID: 1916897364
+      spriteID: 41127658c8f0bab4f98268c83eb4d373
+      internalID: -1497768344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_51
+      name: img_erik_walk_51
       rect:
         serializedVersion: 2
         x: 384
@@ -1208,14 +1208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09787b38991edcc458cec8838b70a376
-      internalID: 1729641416
+      spriteID: 505092e3c652cf7409a2dd89c5a6363c
+      internalID: -1062082087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_52
+      name: img_erik_walk_52
       rect:
         serializedVersion: 2
         x: 448
@@ -1229,14 +1229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9d57b4bf8008a7408d20c0cce908b12
-      internalID: -1724883171
+      spriteID: c371861a5376e7e448e950b0168ee55a
+      internalID: 889558412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_53
+      name: img_erik_walk_53
       rect:
         serializedVersion: 2
         x: 512
@@ -1250,14 +1250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae98ba4ee24196f48a91045a9ed13fd2
-      internalID: 741177741
+      spriteID: 2e083d1f5ea471c4da19f1dcaf7a0a86
+      internalID: 1692428508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_54
+      name: img_erik_walk_54
       rect:
         serializedVersion: 2
         x: 0
@@ -1271,14 +1271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 999e031473f4d07489dfa9cf82104fee
-      internalID: -508734974
+      spriteID: 5dbe257f4791836448c0e48acc5b4fb3
+      internalID: -2048753171
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_55
+      name: img_erik_walk_55
       rect:
         serializedVersion: 2
         x: 64
@@ -1292,14 +1292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1db6b7125603ac54b897ac9171f9a8ba
-      internalID: -188775200
+      spriteID: a280806625c323b499657d701f0faf25
+      internalID: 391706468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_56
+      name: img_erik_walk_56
       rect:
         serializedVersion: 2
         x: 128
@@ -1313,14 +1313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b282a0885585ee94bbba2eeaa2a0625b
-      internalID: 2083918303
+      spriteID: f516905ac70064b48985f077f6e70b9d
+      internalID: -265097008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_57
+      name: img_erik_walk_57
       rect:
         serializedVersion: 2
         x: 192
@@ -1334,14 +1334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba2b8f2a5760b9a418dce7fd9df9d69b
-      internalID: 1151116718
+      spriteID: 6bbbf5443ee0c8a41bc8b978b522168b
+      internalID: -1328048333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_58
+      name: img_erik_walk_58
       rect:
         serializedVersion: 2
         x: 256
@@ -1355,14 +1355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ae186eb685ccc84594b987e78107918
-      internalID: 1946250306
+      spriteID: 39b921caa5afbfb40af2def183c4209b
+      internalID: -2043743123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_59
+      name: img_erik_walk_59
       rect:
         serializedVersion: 2
         x: 320
@@ -1376,14 +1376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09f25e9a990a309429f78bd0ad96f93a
-      internalID: 919100321
+      spriteID: 02d43ee53ab1ad144aa9d0c44fc10863
+      internalID: -1347121325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_60
+      name: img_erik_walk_60
       rect:
         serializedVersion: 2
         x: 384
@@ -1397,14 +1397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ffe3cf67d10be14e9a40bd23be66758
-      internalID: -1149669240
+      spriteID: e772e52a58c4e504e8d53edafbef908a
+      internalID: 841523658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_61
+      name: img_erik_walk_61
       rect:
         serializedVersion: 2
         x: 448
@@ -1418,14 +1418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd4020aaa9fc5b944a022cc3e06de031
-      internalID: -304030455
+      spriteID: 0f42aae0d25c9554b9e29d30f8b938ae
+      internalID: -1873982091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_62
+      name: img_erik_walk_62
       rect:
         serializedVersion: 2
         x: 512
@@ -1439,14 +1439,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9839200e9684f1d4cadef007d5d926b0
-      internalID: -2003385955
+      spriteID: c4d59e9f2821b9e46b57fc659084d4c1
+      internalID: 166706617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_63
+      name: img_erik_walk_63
       rect:
         serializedVersion: 2
         x: 0
@@ -1460,14 +1460,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12b3b5ad9d80e424bb528601605dcbf5
-      internalID: 4119509
+      spriteID: db8311e2fb2f63348bb50878b889ce6e
+      internalID: -296237483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_blonde_enemy_walk_64
+      name: img_erik_walk_64
       rect:
         serializedVersion: 2
         x: 64
@@ -1481,8 +1481,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 964e6c7cce4d7ad4690eb5218b449be0
-      internalID: -1711258001
+      spriteID: 649bba0698412e94bbe930fd5e0f0ed0
+      internalID: 1817924869
       vertices: []
       indices: 
       edges: []
@@ -1498,71 +1498,71 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      green_blonde_enemy_walk_0: 2141690923
-      green_blonde_enemy_walk_1: 1675924156
-      green_blonde_enemy_walk_10: -616096620
-      green_blonde_enemy_walk_11: -1705123488
-      green_blonde_enemy_walk_12: 1606877787
-      green_blonde_enemy_walk_13: 1323987231
-      green_blonde_enemy_walk_14: 463698198
-      green_blonde_enemy_walk_15: 1197718027
-      green_blonde_enemy_walk_16: -1201920862
-      green_blonde_enemy_walk_17: -1980034246
-      green_blonde_enemy_walk_18: -1882664129
-      green_blonde_enemy_walk_19: -1879180178
-      green_blonde_enemy_walk_2: -1831715296
-      green_blonde_enemy_walk_20: -78819161
-      green_blonde_enemy_walk_21: 1959868543
-      green_blonde_enemy_walk_22: -1706792027
-      green_blonde_enemy_walk_23: -1741347133
-      green_blonde_enemy_walk_24: 875361347
-      green_blonde_enemy_walk_25: 555571775
-      green_blonde_enemy_walk_26: 1132521216
-      green_blonde_enemy_walk_27: 1595278630
-      green_blonde_enemy_walk_28: -2028857457
-      green_blonde_enemy_walk_29: -454239706
-      green_blonde_enemy_walk_3: 1203325623
-      green_blonde_enemy_walk_30: 155842939
-      green_blonde_enemy_walk_31: 1889955574
-      green_blonde_enemy_walk_32: -547052102
-      green_blonde_enemy_walk_33: -1941707958
-      green_blonde_enemy_walk_34: 638419046
-      green_blonde_enemy_walk_35: 1386592851
-      green_blonde_enemy_walk_36: -2127527322
-      green_blonde_enemy_walk_37: 92665701
-      green_blonde_enemy_walk_38: -874246165
-      green_blonde_enemy_walk_39: -423559264
-      green_blonde_enemy_walk_4: 1104071154
-      green_blonde_enemy_walk_40: -14101621
-      green_blonde_enemy_walk_41: 58882982
-      green_blonde_enemy_walk_42: -417455527
-      green_blonde_enemy_walk_43: -1127551286
-      green_blonde_enemy_walk_44: -1180002731
-      green_blonde_enemy_walk_45: -317452996
-      green_blonde_enemy_walk_46: -391520571
-      green_blonde_enemy_walk_47: -721790848
-      green_blonde_enemy_walk_48: -208837338
-      green_blonde_enemy_walk_49: 189162309
-      green_blonde_enemy_walk_5: -400027470
-      green_blonde_enemy_walk_50: 1916897364
-      green_blonde_enemy_walk_51: 1729641416
-      green_blonde_enemy_walk_52: -1724883171
-      green_blonde_enemy_walk_53: 741177741
-      green_blonde_enemy_walk_54: -508734974
-      green_blonde_enemy_walk_55: -188775200
-      green_blonde_enemy_walk_56: 2083918303
-      green_blonde_enemy_walk_57: 1151116718
-      green_blonde_enemy_walk_58: 1946250306
-      green_blonde_enemy_walk_59: 919100321
-      green_blonde_enemy_walk_6: 1524364094
-      green_blonde_enemy_walk_60: -1149669240
-      green_blonde_enemy_walk_61: -304030455
-      green_blonde_enemy_walk_62: -2003385955
-      green_blonde_enemy_walk_63: 4119509
-      green_blonde_enemy_walk_64: -1711258001
-      green_blonde_enemy_walk_7: -732823284
-      green_blonde_enemy_walk_8: -1373532503
-      green_blonde_enemy_walk_9: -432768052
+      img_erik_walk_0: 1161780028
+      img_erik_walk_1: -1559631631
+      img_erik_walk_10: -1787792754
+      img_erik_walk_11: 123999375
+      img_erik_walk_12: -1827243709
+      img_erik_walk_13: -1354479797
+      img_erik_walk_14: 87533398
+      img_erik_walk_15: 1412728524
+      img_erik_walk_16: -1733136907
+      img_erik_walk_17: 1794005241
+      img_erik_walk_18: -455009408
+      img_erik_walk_19: -296449189
+      img_erik_walk_2: -2074340269
+      img_erik_walk_20: -1850134659
+      img_erik_walk_21: 339909188
+      img_erik_walk_22: 1367399531
+      img_erik_walk_23: 1639751071
+      img_erik_walk_24: 1483274837
+      img_erik_walk_25: -406346600
+      img_erik_walk_26: -979495408
+      img_erik_walk_27: 16739728
+      img_erik_walk_28: 416861640
+      img_erik_walk_29: -388894877
+      img_erik_walk_3: -640012872
+      img_erik_walk_30: 2031486880
+      img_erik_walk_31: 39908355
+      img_erik_walk_32: -1168496938
+      img_erik_walk_33: -1442733395
+      img_erik_walk_34: -1661056132
+      img_erik_walk_35: 504815168
+      img_erik_walk_36: 837057042
+      img_erik_walk_37: -574284893
+      img_erik_walk_38: -1061478124
+      img_erik_walk_39: 504533147
+      img_erik_walk_4: 1049729622
+      img_erik_walk_40: 1233615193
+      img_erik_walk_41: 701312341
+      img_erik_walk_42: 77417309
+      img_erik_walk_43: -1237664683
+      img_erik_walk_44: 155862404
+      img_erik_walk_45: -749909142
+      img_erik_walk_46: 586009085
+      img_erik_walk_47: 894851319
+      img_erik_walk_48: -414017643
+      img_erik_walk_49: 182369811
+      img_erik_walk_5: -418699105
+      img_erik_walk_50: -1497768344
+      img_erik_walk_51: -1062082087
+      img_erik_walk_52: 889558412
+      img_erik_walk_53: 1692428508
+      img_erik_walk_54: -2048753171
+      img_erik_walk_55: 391706468
+      img_erik_walk_56: -265097008
+      img_erik_walk_57: -1328048333
+      img_erik_walk_58: -2043743123
+      img_erik_walk_59: -1347121325
+      img_erik_walk_6: -157785300
+      img_erik_walk_60: 841523658
+      img_erik_walk_61: -1873982091
+      img_erik_walk_62: 166706617
+      img_erik_walk_63: -296237483
+      img_erik_walk_64: 1817924869
+      img_erik_walk_7: 1485738796
+      img_erik_walk_8: 1665722292
+      img_erik_walk_9: 1775019264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

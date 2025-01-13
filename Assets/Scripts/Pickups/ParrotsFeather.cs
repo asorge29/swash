@@ -9,7 +9,7 @@ namespace Pickups
             if (collision.gameObject.CompareTag("Player"))
             {
                 PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-                player.dashAbility = true;
+                //player.dashAbility = true;
                 Destroy(gameObject);
             }
         }

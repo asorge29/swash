@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using UnityEngine;
-
+//color is 168 168 168 105
 [SelectionBase]
-public class EnemyAi : MonoBehaviour
+public class AnchoredEnemyController : MonoBehaviour
 {
     public float health = 100;
 
@@ -13,27 +13,21 @@ public class EnemyAi : MonoBehaviour
 
     public int attackDamage = 5;
     public float attackCooldown = 0.5f;
-    public float attackRange = 0.5f;
     public float damageMultiplier = 1f;
     
-    public bool anchored = false;
-
-    public Color hairColor;
-    public Color coatColor;
-
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _bodyAnimator;
     [SerializeField] Animator _shirtAnimator;
     [SerializeField] Animator _hairAnimator;
     [SerializeField] SpriteRenderer _shirtRenderer;
     [SerializeField] SpriteRenderer _hairRenderer;
-    [SerializeField] SpriteRenderer _spriteRenderer;
+    [SerializeField] SpriteRenderer _bodyRenderer;
     [SerializeField] AnchoredSpirit _anchoredSpirit;
 
     private float _lastAttack;
 
-    [HideInInspector] public bool knockedBack = false;
-    [HideInInspector] public float knockbackTimer = 0f;
+    [HideInInspector] public bool knockedBack;
+    [HideInInspector] public float knockbackTimer;
 
     private Facing _facing = Facing.Right;
     private float _facingAngle;
@@ -43,6 +37,7 @@ public class EnemyAi : MonoBehaviour
     private Vector2 _moveDir = Vector2.zero;
     
     private Color _spiritColor;
+    private bool _anchored;
     
     private enum Facing
     {
@@ -87,9 +82,8 @@ public class EnemyAi : MonoBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerController = _player.GetComponent<PlayerController>();
-        if (!anchored) return;
         _spiritColor = new Color(_anchoredSpirit.soulColor.r, _anchoredSpirit.soulColor.g, _anchoredSpirit.soulColor.b, 1);
-        _spriteRenderer.color = _spiritColor;
+        _bodyRenderer.color = _spiritColor;
     }
 
     private void Update()
@@ -111,9 +105,9 @@ public class EnemyAi : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (anchored)
+        if (_anchored)
         {
-            anchored = _anchoredSpirit.anchored;
+            _anchored = _anchoredSpirit.CheckAnchored();
         }
     }
 
@@ -156,7 +150,7 @@ public class EnemyAi : MonoBehaviour
         if (!(Time.time > attackCooldown + _lastAttack)) return;
         
         _lastAttack = Time.time;
-        _playerController.health -= attackDamage * damageMultiplier;
+        _playerController.TakeDamage(attackDamage * damageMultiplier);
             
         //TODO: work out player knockback without stunlocking
         //Vector2 knockbackDirection = (erb.position - _rb.position).normalized;

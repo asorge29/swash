@@ -43,8 +43,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4603612533727437668}
-  - component: {fileID: -6147094075263613167}
-  - component: {fileID: 7683521843033090669}
+  - component: {fileID: 2225408147677045621}
+  - component: {fileID: 6585747116775640943}
+  - component: {fileID: 3586651911447428757}
   - component: {fileID: 5297018788422125522}
   - component: {fileID: 8502096327982723627}
   - component: {fileID: 3659082735133327036}
@@ -71,7 +72,7 @@ Transform:
   - {fileID: 1393979258341321264}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6147094075263613167
+--- !u!114 &2225408147677045621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,31 +81,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1741241271364734707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6c07a297e6935f489a90efd9052c603, type: 3}
+  m_Script: {fileID: 11500000, guid: 7722fb2407334730a1cec32bfc7e0d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  moveSpeed: 2
-  acceleration: 50
-  detectRange: 6
-  attackDamage: 5
-  attackCooldown: 1
-  attackRange: 0.5
-  damageMultiplier: 1
-  anchored: 0
-  hairColor: {r: 0.4811321, g: 0.09582352, b: 0, a: 0}
-  coatColor: {r: 0.8962264, g: 0, b: 0, a: 0}
-  _rb: {fileID: 5297018788422125522}
-  _bodyAnimator: {fileID: 6428622527159464102}
-  _shirtAnimator: {fileID: 4147824182587636840}
-  _hairAnimator: {fileID: 5803779989950799337}
-  _shirtRenderer: {fileID: 4082683948687585277}
-  _hairRenderer: {fileID: 7227189156554843086}
-  _spriteRenderer: {fileID: 0}
-  _anchoredSpirit: {fileID: 0}
-  knockedBack: 0
-  knockbackTimer: 0
---- !u!114 &7683521843033090669
+  startingHealth: 100
+--- !u!114 &6585747116775640943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,27 +94,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1741241271364734707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9713bff2e05d184c8ac4464c150ca14, type: 3}
+  m_Script: {fileID: 11500000, guid: cbc6742d664c4a168ce8195b3e49e2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  detectRange: 6
   moveSpeed: 2
   acceleration: 50
-  detectRange: 6
   attackDamage: 5
   attackCooldown: 0.5
   damageMultiplier: 1
+  rb: {fileID: 5297018788422125522}
+  bodyAnimator: {fileID: 6428622527159464102}
+  shirtAnimator: {fileID: 4147824182587636840}
+  hairAnimator: {fileID: 5803779989950799337}
+--- !u!114 &3586651911447428757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741241271364734707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2389cd6b1b044827a528c6d05ff53490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   hairColor: {r: 0.48235297, g: 0.09411766, b: 0, a: 0}
-  coatColor: {r: 0.8980393, g: 0, b: 0, a: 0}
-  _rb: {fileID: 5297018788422125522}
-  _bodyAnimator: {fileID: 6428622527159464102}
-  _shirtAnimator: {fileID: 4147824182587636840}
-  _hairAnimator: {fileID: 5803779989950799337}
-  _shirtRenderer: {fileID: 4082683948687585277}
-  _hairRenderer: {fileID: 7227189156554843086}
-  _spriteRenderer: {fileID: 91657561884617220}
-  knockedBack: 0
-  knockbackTimer: 0
+  shirtColor: {r: 0.8980393, g: 0, b: 0, a: 0}
+  shirtRenderer: {fileID: 4082683948687585277}
+  hairRenderer: {fileID: 7227189156554843086}
 --- !u!50 &5297018788422125522
 Rigidbody2D:
   serializedVersion: 4

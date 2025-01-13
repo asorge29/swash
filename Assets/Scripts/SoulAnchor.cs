@@ -24,7 +24,7 @@ public class SoulAnchor : MonoBehaviour
     private void CheckDead()
     {
         if (health >= 0) return;
-        anchoredSpirit.anchored = false;
+        anchoredSpirit.ReleaseAnchor();
         Destroy(gameObject);
     }
 }

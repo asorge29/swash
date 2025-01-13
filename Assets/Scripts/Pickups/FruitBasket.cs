@@ -11,7 +11,7 @@ namespace Pickups
             if (collision.gameObject.CompareTag("Player"))
             {
                 PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-                player.regenerationRate += regenRateIncrease;
+                //player.regenerationRate += regenRateIncrease;
                 Destroy(gameObject);
             }
         }

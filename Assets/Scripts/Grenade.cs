@@ -31,16 +31,16 @@ public class Grenade : MonoBehaviour
         foreach (var e in _enemiesInRange)
         {
             var erb = e.GetComponent<Rigidbody2D>();
-            var enemyAi = e.GetComponent<EnemyAi>();
+            //var enemyAi = e.GetComponent<EnemyAi>();
             var anchor = e.GetComponent<SoulAnchor>();
 
-            if (enemyAi && enemyAi.anchored) return;
+          //  if (enemyAi && enemyAi.anchored) return;
 
-            if (enemyAi)
+            //if (enemyAi)
             {
-                enemyAi.health -= damage;
+            //    enemyAi.health -= damage;
             }
-            else if (anchor)
+           // else if (anchor)
             {
                 anchor.health -= damage;
             }
