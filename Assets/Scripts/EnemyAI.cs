@@ -103,6 +103,13 @@ public class EnemyAI: MonoBehaviour
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, moveSpeed);
         }
     }
+
+    public void TakeKnockback(Vector2 force, float duration)
+    {
+        _knockedBack = true;
+        _knockBackTimer = duration;
+        rb.AddForce(force, ForceMode2D.Impulse);
+    }
     
     private void TrackPlayer()
     {

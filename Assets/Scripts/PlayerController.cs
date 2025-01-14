@@ -168,9 +168,10 @@ public class PlayerController : MonoBehaviour
         _lastAttack = Time.time;
         foreach (var e in _enemiesInRange)
         {
-            var erb = e.GetComponent<Rigidbody2D>();
+            var enemyAi = e.GetComponent<EnemyAI>();
+            var enemyPos = (Vector2)e.transform.position;
             
-            var angle = Vector2.SignedAngle(Vector2.right, erb.position - (Vector2)transform.position);
+            var angle = Vector2.SignedAngle(Vector2.right, enemyPos - (Vector2)transform.position);
 //TODO: make this dependent on cursor rather than facing status
             switch (_facing)
             {
@@ -188,16 +189,12 @@ public class PlayerController : MonoBehaviour
                     break;
             } 
             
-            //var enemyAi = erb.GetComponent<EnemyAi>();
+            var enemyHealth = e.GetComponent<Health>();
 
-            //if (enemyAi.anchored) return;
-
-            //enemyAi.health -= damage * damageMultiplier;
-
-            Vector2 knockbackDirection = (erb.position - _rb.position).normalized;
-            //enemyAi.knockedBack = true;
-            //enemyAi.knockbackTimer = knockbackTime;
-            erb.AddForce(knockbackDirection * (knockbackForce + _rb.velocity.magnitude), ForceMode2D.Impulse);
+            enemyHealth.TakeDamage(damage * damageMultiplier);
+            Vector2 knockBackDirection = (enemyPos - _rb.position).normalized;
+            Vector2 knockBackForce = knockBackDirection * (knockbackForce + _rb.velocity.magnitude);
+            enemyAi.TakeKnockback(knockBackForce, knockbackTime);
         }
     }
 
