@@ -4,6 +4,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int startingHealth = 100;
+    public bool anchor;
     
     private float _health;
     private bool _anchored;
@@ -21,9 +22,10 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, string from = "")
     {
         if (_anchored) return;
+        if (anchor && from != "grenade") return;
         _health -= damage;
     }
 }

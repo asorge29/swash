@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
-    
     public float damage = 15f;
-    public float timer = 0.1f;
+    public float timer = 1f;
 
     public Rigidbody2D rb;
-    
+    [SerializeField] private Animator animator;
+    private readonly int _animExplode = Animator.StringToHash("anim_grenade_explode");
     private float _stopTime = 0f;
+    private bool _stopped;
     private List<GameObject> _enemiesInRange = new();
-    
+
     void Update()
     {
-        if (rb.velocity.sqrMagnitude < 1f && _stopTime == 0f)
+        if (!_stopped)
         {
-            _stopTime = Time.time;
+            if (rb.velocity.sqrMagnitude < 1f && _stopTime == 0f)
+            {
+                _stopTime = Time.time;
+                _stopped = true;
+            }
+            else
+            {
+                _stopTime = Time.time;
+            }
         }
-
+        
         if (Time.time >= _stopTime + timer)
         {
             Explode();
@@ -30,24 +39,15 @@ public class Grenade : MonoBehaviour
     {
         foreach (var e in _enemiesInRange)
         {
-            var erb = e.GetComponent<Rigidbody2D>();
-            //var enemyAi = e.GetComponent<EnemyAi>();
-            var anchor = e.GetComponent<SoulAnchor>();
+            var health = e.GetComponent<Health>();
 
-          //  if (enemyAi && enemyAi.anchored) return;
-
-            //if (enemyAi)
-            {
-            //    enemyAi.health -= damage;
-            }
-           // else if (anchor)
-            {
-                anchor.health -= damage;
-            }
+            health.TakeDamage(damage, "grenade");
         }
-        Destroy(gameObject);
+
+        animator.CrossFade(_animExplode, 0);
+        //Destroy(gameObject);
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.isTrigger && collision.gameObject.CompareTag("Enemy"))

@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  anchor: 0
 --- !u!114 &1527431466253636816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,25 +96,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88894657b1fae4046918e6ec4d9f7783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
-  maxHealth: 100
-  regenerationRate: 0.5
+  startingHealth: 100
   moveSpeed: 5
   acceleration: 50
-  dashAbility: 0
   attackCooldown: 0.5
-  attackRange: 0.5
   knockbackForce: 5
   knockbackTime: 0.2
   damage: 20
   damageMultiplier: 1
-  visible: 1
   coins: 0
   goldEarnRate: 1
+  grenadePrefab: {fileID: 3394719906878562888, guid: d4b8d4f275763c947bb45f1096a200e6, type: 3}
   _rb: {fileID: 5297018788422125522}
   _animator: {fileID: 7753829721058668327}
   _spriteRenderer: {fileID: 6277887124349391674}
-  health: 0
 --- !u!50 &5297018788422125522
 Rigidbody2D:
   serializedVersion: 4

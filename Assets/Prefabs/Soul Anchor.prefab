@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1655806245219977133}
   - component: {fileID: 8459139863069749802}
+  - component: {fileID: 3822885974771645451}
   - component: {fileID: 2885438956109434632}
   m_Layer: 0
   m_Name: Soul Anchor
@@ -137,6 +138,19 @@ MonoBehaviour:
   anchoredSpirit: {fileID: 0}
   hazeRenderer: {fileID: 2407822063250867902}
   stringRenderer: {fileID: 8471778825975532600}
+--- !u!114 &3822885974771645451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146071458616947650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7722fb2407334730a1cec32bfc7e0d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 1
 --- !u!60 &2885438956109434632
 PolygonCollider2D:
   m_ObjectHideFlags: 0

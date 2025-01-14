@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     public float coins = 0f;
     public float goldEarnRate = 1f;
+    
+    public GameObject grenadePrefab;
 
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _animator;
@@ -128,6 +130,11 @@ public class PlayerController : MonoBehaviour
             _ => _facing
         };
 
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            ThrowGrenade();
+        }
+
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.JoystickButton0))
         {
             Attack();
@@ -159,6 +166,16 @@ public class PlayerController : MonoBehaviour
 #endif
             Application.Quit();
         }
+    }
+
+    private void ThrowGrenade()
+    {
+        GameObject grenade = Instantiate(grenadePrefab, transform.position, Quaternion.identity);
+        var grenadeRb = grenade.GetComponent<Rigidbody2D>();
+        grenadeRb.velocity = Vector2.zero;
+        var throwDirection = ((Vector2)_mousePos - (Vector2)transform.position).normalized;
+        var throwForce = throwDirection * 5;
+        grenadeRb.AddForce(throwForce, ForceMode2D.Impulse);
     }
 
     private void Attack()
