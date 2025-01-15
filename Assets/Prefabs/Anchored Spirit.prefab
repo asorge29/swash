@@ -373,14 +373,13 @@ MonoBehaviour:
   attackDamage: 5
   attackCooldown: 0.5
   damageMultiplier: 1
-  anchored: 0
   _rb: {fileID: 3589850515090672332}
   _bodyAnimator: {fileID: 2406174146245098936}
   _shirtAnimator: {fileID: 4738759453957566838}
   _hairAnimator: {fileID: 2943198724132344055}
   _shirtRenderer: {fileID: 4682591222868828899}
   _hairRenderer: {fileID: 2026442522540289744}
-  _spriteRenderer: {fileID: 8725406050378802970}
+  _bodyRenderer: {fileID: 0}
   _anchoredSpirit: {fileID: 685376656650169756}
   knockedBack: 0
   knockbackTimer: 0
@@ -572,7 +571,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soulColor: {r: 0.09620428, g: 1, b: 0, a: 0}
-  anchored: 0
 --- !u!1001 &2587857537552246207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -624,6 +622,10 @@ PrefabInstance:
     - target: {fileID: 3146071458616947650, guid: a5b19a8648c7dc545802e7dc54675f91, type: 3}
       propertyPath: m_Name
       value: Soul Anchor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822885974771645451, guid: a5b19a8648c7dc545802e7dc54675f91, type: 3}
+      propertyPath: anchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8459139863069749802, guid: a5b19a8648c7dc545802e7dc54675f91, type: 3}
       propertyPath: anchoredSpirit

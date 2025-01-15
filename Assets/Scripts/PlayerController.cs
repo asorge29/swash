@@ -64,6 +64,11 @@ public class PlayerController : MonoBehaviour
         _health = startingHealth;
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+    
     private void Update()
     {
         CheckDead();

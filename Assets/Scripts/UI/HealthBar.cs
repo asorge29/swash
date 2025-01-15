@@ -5,26 +5,27 @@ namespace UI
 {
     public class HealthBar : MonoBehaviour
     {
-        public PlayerController player;
+        private PlayerController _player;
     
         private Slider _slider;
         void Start()
         {
+            _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             _slider = GetComponent<Slider>();
-            _slider.maxValue = player.startingHealth;
-            _slider.value = player.GetHealth();
+            _slider.maxValue = _player.startingHealth;
+            _slider.value = _player.GetHealth();
         }
     
         void Update()
         {
-            if (player.GetHealth() != _slider.value)
+            if (_player.GetHealth() != _slider.value)
             {
-                _slider.value = player.GetHealth();
+                _slider.value = _player.GetHealth();
             }
 
-            if (player.startingHealth != _slider.maxValue)
+            if (_player.startingHealth != _slider.maxValue)
             {
-                _slider.maxValue = player.startingHealth;
+                _slider.maxValue = _player.startingHealth;
             }
         }
     }
