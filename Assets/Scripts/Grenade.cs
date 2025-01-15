@@ -10,7 +10,7 @@ public class Grenade : MonoBehaviour
     public Rigidbody2D rb;
     [SerializeField] private Animator animator;
     private readonly int _animExplode = Animator.StringToHash("anim_grenade_explode");
-    private float _stopTime = 0f;
+    private float _stopTime;
     private bool _stopped;
     private List<GameObject> _enemiesInRange = new();
 
@@ -18,7 +18,7 @@ public class Grenade : MonoBehaviour
     {
         if (!_stopped)
         {
-            if (rb.velocity.sqrMagnitude < 1f && _stopTime == 0f)
+            if (rb.velocity.sqrMagnitude < 1f)
             {
                 _stopTime = Time.time;
                 _stopped = true;
@@ -45,7 +45,7 @@ public class Grenade : MonoBehaviour
         }
 
         animator.CrossFade(_animExplode, 0);
-        //Destroy(gameObject);
+        Destroy(gameObject, 0.667f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

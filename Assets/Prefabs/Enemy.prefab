@@ -85,6 +85,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  anchor: 0
+  lootPrefab: {fileID: 6298609785362928000, guid: 4d3dd88470b73da448e9f6c9927d7121, type: 3}
 --- !u!114 &6585747116775640943
 MonoBehaviour:
   m_ObjectHideFlags: 0
