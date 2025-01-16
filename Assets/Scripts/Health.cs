@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class Health : MonoBehaviour
 {
     public int startingHealth = 100;
     public bool anchor;
     
-    public GameObject lootPrefab;
-    
+    public List<GameObject> lootPrefabs;    
     private float _health;
     private bool _anchored;
 
@@ -20,9 +21,11 @@ public class Health : MonoBehaviour
     {
         if (_health <= 0)
         {
-            if (lootPrefab)
+            if (lootPrefabs.Count > 0)
             {
-                Instantiate(lootPrefab, transform.position, Quaternion.identity);
+                var rnd = new Random();
+                var i = rnd.Next(lootPrefabs.Count);
+                Instantiate(lootPrefabs[i], transform.position, Quaternion.identity);
             }
             Destroy(gameObject);
         }

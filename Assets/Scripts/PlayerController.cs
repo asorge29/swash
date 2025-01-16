@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [SelectionBase]
 public class PlayerController : MonoBehaviour
@@ -67,6 +68,16 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject respawnPoint = GameObject.FindGameObjectWithTag("Respawn");
+        if (respawnPoint != null)
+        {
+            gameObject.transform.position = respawnPoint.transform.position;
+        }
     }
     
     private void Update()
