@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 _moveDir = Vector2.zero;
     private float _facingAngle;
 
+    private bool _enabled = true;
+
     private enum Facing
     {
         Up,
@@ -84,7 +86,10 @@ public class PlayerController : MonoBehaviour
     {
         CheckDead();
         Escape();
-        GatherInput();
+        if (_enabled)
+        {
+            GatherInput();
+        }
         UpdateAnimation();
     }
 
@@ -182,6 +187,13 @@ public class PlayerController : MonoBehaviour
 #endif
             Application.Quit();
         }
+    }
+
+    private void RideBoat()
+    {
+        GameObject boat = GameObject.FindGameObjectWithTag("Boat");
+        gameObject.transform.position = boat.transform.position;
+        _facing = boat.GetComponent<BoatController>().flip ? Facing.Left : Facing.Right;
     }
 
     private void ThrowGrenade()
