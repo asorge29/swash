@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour
     private float _health;
     private float _lastAttack;
 
+    private GameObject _boat;
+    private bool _inBoat;
+    private BoatController _boatController;
+
     private readonly List<GameObject> _enemiesInRange = new();
 
     private Facing _facing = Facing.Left;
@@ -65,6 +69,8 @@ public class PlayerController : MonoBehaviour
     {
         _lastAttack = Time.time - attackCooldown;
         _health = startingHealth;
+        _boat = GameObject.FindGameObjectWithTag("Boat");
+        _boatController = _boat.GetComponent<BoatController>();
     }
 
     private void Awake()
@@ -80,6 +86,8 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.transform.position = respawnPoint.transform.position;
         }
+        _enabled = true;
+        _inBoat = false;
     }
     
     private void Update()
@@ -89,6 +97,10 @@ public class PlayerController : MonoBehaviour
         if (_enabled)
         {
             GatherInput();
+        }
+        else if (_inBoat)
+        {
+            RideBoat();
         }
         UpdateAnimation();
     }
@@ -191,9 +203,16 @@ public class PlayerController : MonoBehaviour
 
     private void RideBoat()
     {
-        GameObject boat = GameObject.FindGameObjectWithTag("Boat");
-        gameObject.transform.position = boat.transform.position;
-        _facing = boat.GetComponent<BoatController>().flip ? Facing.Left : Facing.Right;
+        Vector3 newPosition = _boat.transform.position;
+        newPosition.y += 0.5f;
+        gameObject.transform.position = newPosition;
+        _facing = _boatController.flip ? Facing.Left : Facing.Right;
+    }
+
+    public void EnterBoat()
+    {
+        _inBoat = true;
+        _enabled = false;
     }
 
     private void ThrowGrenade()
@@ -246,7 +265,7 @@ public class PlayerController : MonoBehaviour
     //TODO: play swash animation on attack
     private void UpdateAnimation()
     {
-        if (_moveDir.sqrMagnitude > 0)
+        if (_moveDir.sqrMagnitude > 0 && !_inBoat)
         {
             switch (_facing)
             {
