@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         _lastAttack = Time.time - attackCooldown;
         _health = startingHealth;
         _boat = GameObject.FindGameObjectWithTag("Boat");
-        _boatController = _boat.GetComponent<BoatController>();
+        if (_boat) _boatController = _boat.GetComponent<BoatController>();
     }
 
     private void Awake()
@@ -254,7 +254,7 @@ public class PlayerController : MonoBehaviour
             } 
             
             var enemyHealth = e.GetComponent<Health>();
-
+            if (enemyHealth.CheckAnchored()) return;
             enemyHealth.TakeDamage(damage * damageMultiplier);
             Vector2 knockBackDirection = (enemyPos - _rb.position).normalized;
             Vector2 knockBackForce = knockBackDirection * (knockbackForce + _rb.velocity.magnitude);
