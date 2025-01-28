@@ -31,6 +31,17 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void NotAnchored()
+    {
+        _anchored = false;
+    }
+    
+    public void MakeAnchored()
+    {
+        _anchored = true;
+    }
+        
+
     public void TakeDamage(float damage, string from = "")
     {
         if (_anchored) return;
